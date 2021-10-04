@@ -31,11 +31,32 @@ function CartItem (product,quantity){
     this.quantity = quantity;
 }
 
-allCart = []
+
+
 // creates Cart
-function Cart(product,quantity){
-    new CartItem(product,quantity);
-    allCart.push
+const Cart = function(items){
+    this.items = items;
+}
+
+//add function to add an item to cart
+Cart.prototype.addItem = function(product,quantity){
+    let item = new CartItem(product,quantity);
+    this.items.push(item);
+
+}
+
+//add function to remove item from cart
+Cart.prototype.removeItem = function(product,quantity){
+    let modifiedCart = [];
+    for(let i =0; i<this.items.length; i++){
+        if (product === this.items[i].product && quantity ===this.items[i].quantity){
+            continue;
+        }
+        else{
+            modifiedCart.push(this.items[i]);
+        }
+    }
+
 
 }
 
