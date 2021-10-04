@@ -1,0 +1,38 @@
+body {
+    background-color: aliceblue;
+}
+
+header {    
+    background-image: url(https://www.seaciti.org/2021/wp-content/uploads/2020/03/covid_header-1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    height: 300px;
+    width: 100%;
+    padding: 30px;
+    
+}
+
+header h1 {
+    color:antiquewhite;
+    font-family: 'Zen Dots', cursive;
+    font-size: xx-large;
+    text-align: center;
+    
+}
+.navItems {
+    color:antiquewhite;
+    text-align: center;
+    position: relative;
+}
+
+.navItems li {
+    list-style: none;
+    display: inline-block;
+    justify-content: space-between;
+    padding: 30px;
+
+}
+
+.navItems button {
+    border-radius: 20px;
+}
