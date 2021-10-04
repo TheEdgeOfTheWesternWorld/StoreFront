@@ -40,4 +40,4 @@
 - Merchant can adjust items for sale on page
 - Merchant can check inventory due to change from sales
 
-## [Prooblem Domain](store-front.png)
+## [Prooblem Domain](assets/store-front.png)
