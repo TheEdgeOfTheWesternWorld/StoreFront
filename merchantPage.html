@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="merchantCSS.css">
+    </head>
+    <body>
+        <header>
+            <h1>Merchant Info</h1>
+        </header>
+        <main>
+            <section>
+                <div id="merchant-info">
+                    <ul>
+                        <li id="merchant-name">Name: MERCHANTNAME</li>
+                        <li id ="merchant-info">Info: MERCHANTINFORMATION</li>
+                    </ul>
+                </div>
+                <table>
+                    <thead>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Inventory Qty.</th>
+                        <th>Remove Item</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td><button>Remove Item</button></td>
+                        </tr>
+                        <tr>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td><button>Remove Item</button></td>
+                        </tr>
+                        <tr>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td><button>Remove Item</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+                <form>
+                    <h3>Add New Item</h3>
+                    <fieldset>
+                        <div>
+                            <label>Name</label>
+                            <input name="productName"type="text">
+                        </div>
+                        <div>
+                            <label>Image URL</label>
+                            <input name="imgURL" type="text">
+                        </div>
+                        <div>
+                            <label>Price</label>
+                            <input name="price" type="number" step=".01">
+                        </div>
+                        <div>
+                            <label>Details</label>
+                            <input name="details" type="text">
+                        </div>
+                        <div>
+                            <label>Inventory Quantity</label>
+                            <input name="inventoryQuantity" type="number" step="1">
+                        </div>
+                        <input type="submit">
+
+                    </fieldset>
+                </form>
+            <section>
+
+            </section>
+        </main>
+
+        <footer>
+            &copy Capitalism Incorporated 2021 all rights reserved
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+header {
+    height: 160px;
+    background-color: #055C9D;
+    color: white;
+    text-align: center;
+}
+main {
+    width: 960px;
+    margin: 0 auto;
+}
+table {
+    background-color: #68BBE3;
+    width: 84%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: thin #055C9D solid;
+}
+td {
+    border: thin #055C9D solid;
+}
+th {
+    background-color: #055C9D;
+    color: white;
+}
+#merchant-info ul {
+    list-style: none;
+    padding-left: 0;
+}
+#merchant-info li {
+    display: inline;
+}
+form {
+    text-align:center;
+}
+
+footer {
+    height: 160px;
+    background-color: #055C9D;
+    color: white;
+    text-align: center;
+}
