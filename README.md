@@ -3,7 +3,7 @@
 # StoreFront
 
 # Work Agreement:
-- K’lan: 
+- K’Lan: 
   - Able to fit the roles that come up
   - Being able to understand the full code
   - Improve tool proficiency 
