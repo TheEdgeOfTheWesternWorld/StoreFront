@@ -35,4 +35,54 @@ header h1 {
 
 .navItems button {
     border-radius: 20px;
+    padding: 20px;
+    display: flex;
+}
+
+section {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+section .item1 {
+    float: right;
+    padding: 10px;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+
+section .item2 {
+    float: left;
+    padding: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+section .item3 {
+    float: left;
+    padding: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+section .item4 {
+    float: left;
+    padding: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    padding: 30px;
+    border-style: double;
+    border-color: darkblue;
 }
