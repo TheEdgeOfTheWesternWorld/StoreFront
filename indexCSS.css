@@ -27,6 +27,8 @@ header h1 {
 
 .navItems li {
     list-style: none;
+    font-family: 'Bebas Neue', cursive;
+    font-size: large;
     display: inline-block;
     justify-content: space-between;
     padding: 30px;
@@ -37,6 +39,8 @@ header h1 {
     border-radius: 20px;
     padding: 20px;
     display: flex;
+    background-color: darkkhaki;
+    
 }
 
 section {
