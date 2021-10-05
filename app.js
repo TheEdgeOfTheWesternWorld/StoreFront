@@ -74,6 +74,19 @@ Cart.prototype.removeItem = function(product,quantity){
 
 }
 
+//storing cart in local storage
+Cart.prototype.storeCart = function(){
+let storedCart = JSON.stringify(this.items);
+localStorage.setItem('cart',storedCart);
+}
+
+//retrieving cart from local storage
+Cart.prototype.retreiveCart = function(){
+    let retreivedCart = JSON.parse(localStorage.getItem('cart'));
+    let cart = new Cart(retreivedCart);
+}
+
+
 
 
 //contains all merchants that have products for sale
