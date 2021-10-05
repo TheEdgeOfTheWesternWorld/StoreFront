@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="merchantCSS.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">   
+        <title>Capitalism Incorporated</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Zen+Dots&display=swap" rel="stylesheet">
+            
     </head>
     <body>
         <header>
-            <h1>Merchant Info</h1>
+            <h1>Capitalism Incorporated</h1>
+            <nav class="navItems">
+                <ul>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Your Stuff</li>
+                </ul>
+                <button>Merchant Portal</button>
+            </nav>
         </header>
         <main>
             <section>
@@ -67,7 +86,7 @@
                             <label>Inventory Quantity</label>
                             <input name="inventoryQuantity" type="number" step="1">
                         </div>
-                        <input type="submit">
+                        <input id="submit-button" name="product-submit" type="submit">
                     </fieldset>
                 </form>
             <section>
@@ -78,5 +97,7 @@
         <footer>
             &copy Capitalism Incorporated 2021 all rights reserved
         </footer>
+        <script src="app.js"></script>
+        <script src="merchantJS.js"></script>
     </body>
 </html>
