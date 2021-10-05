@@ -1,31 +1,4 @@
-/*const Merchant = function(name) {
-    this.name = name;
-    this.products = [];
-    this.addProduct = function(productObj) {
-        this.products.push(productObj);
-    }
-    this.removeProductByName = function(productName) {
-        let newArr = [];
-        for(let i = 0; i < this.products.length; i++) {
-            if(!this.products[i].productName === productName) {
-                newArr.push(this.products[i]);
-            }// else this is the product being removed, do nothing
-        }
-        this.products = newArr;
-    }
-    this.hasProduct = function(productName) {
-        let hasProduct = false;
-        for(let i = 0; i < this.products.length; i++) {
-            if(this.products[i].productName === productName) {
-                hasProduct = true;
-            }
-        }
-        return hasProduct;
-    }
-}*/
-
-
-//const allProducts = [];
+'use strict';
 
 const hasProduct = function(productName) {
     let hasProduct = false;
@@ -54,7 +27,6 @@ let productSubmit = function(event) {
     let name = newProduct.productName.value;
     let url = newProduct.imgURL.value;
     let price = newProduct.price.value;
-    let details = newProduct.details.value;
     let invQTY = newProduct.inventoryQuantity.value;
     newProduct = new Products(name,url,price,invQTY);
     allProducts.push(newProduct);
@@ -93,6 +65,7 @@ const saveItems = function() {
     localStorage.setItem("productList",toSave);
 
 }
+
 /*
 
 const removeFromTable = function(productName) {
