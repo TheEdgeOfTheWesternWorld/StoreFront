@@ -1,0 +1,42 @@
+#cartInfo
+{
+    border: 1px solid black;
+    margin-bottom: 30px;
+    width: 200px;
+}
+
+ul
+{
+    margin-bottom: 20px;
+    padding: 0;
+    width: 50px;
+    list-style-type: none;
+    text-align: center;
+}
+
+form
+{
+    margin: auto;
+    width: 400px;
+}
+
+label
+{
+    display: block;
+}
+
+li
+{
+    padding: 5px;
+}
+
+footer
+{
+    background-color: #68BBE3;
+    text-align: center;
+}
+
+header
+{
+    background-color: #68BBE3;
+}
