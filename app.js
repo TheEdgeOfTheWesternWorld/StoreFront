@@ -1,6 +1,17 @@
 
 // contains all sellable products
-allProducts =[];
+allProducts =[
+    'banana.jpg',
+    'car.jpg',
+    'computer.jpg',
+    'jacket.jpg',
+    'longboard.jpg',
+    'oranges.jpg',
+    'vader.jpg',
+    'vest.jpg',
+    'jacket2.jpg',
+    'oreo.jpg',
+];
 
 //creates instances of products and stores it in allProducts
 // NEEDS TO BE TESTED
@@ -109,13 +120,13 @@ console.log(testMerchant);
 
 
 // targets the button next to an input in the nav bar on the indes
-let merchantLogin = document.getElementById('BUTTON--CHANGE TO MATCH INDEX PAGE');
+let merchantLogin = document.getElementById('merchantAccess');
 
 // creates both a link to the merchant page and denies access if it is the wrong login
 // NEEDS TO BE TESTED
 function loginHandler(event){
     event.preventDefualt();
-    let loginInput = event.target.'NAME OF VALUE OF INPUT FROM INDEX';
+    let loginInput = event.target.'eatTheRich';
     for (let i =0; i<allMerchants.length; i++){
 
         //if it is the correct login info
