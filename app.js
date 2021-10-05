@@ -4,6 +4,9 @@ allProducts =[];
 
 //creates instances of products and stores it in allProducts
 function Products(productName,productImage,productPrice,productQuantity) {
+    if(recoverStoredMerchant()){
+        this.company = recoverStoredMerchant();
+    }
     this.productName = productName;
     this.productImage = productImage;
     this.productPrice = productPrice;
@@ -12,11 +15,18 @@ function Products(productName,productImage,productPrice,productQuantity) {
 
 }
 
+function recoverStoredMerchant(){
+    let selectedMerchant = JSON.parse(localStorage.getItem('selectedCompany'));
+    return selectedMerchant
+}
+
 //using a test case
 let testCar = new Products('car','assets/car.jpg',4,4000)
 
 //testing 
 console.log(testCar);
+
+
 
 // creates cart items
 function CartItem (product,quantity){
@@ -30,7 +40,6 @@ function CartItem (product,quantity){
     }
     this.quantity = quantity;
 }
-
 
 
 // creates Cart
@@ -61,6 +70,7 @@ Cart.prototype.removeItem = function(product,quantity){
 }
 
 
+
 //contains all merchants that have products for sale
 allMerchants = [];
 
@@ -77,13 +87,15 @@ let testMerchant = new Merchants("Bob's Burger","jimmyBuffetRulez@yahoo.com");
 //continued testing
 console.log(testMerchant);
 
+
+
 // targets the button next to an input in the nav bar on the indes
 let merchantLogin = document.getElementById('BUTTON--CHANGE TO MATCH INDEX PAGE');
 
 // creates both a link to the merchant page and denies access if it is the wrong login
 function loginHandler(event){
     event.preventDefualt();
-    let loginInput = event.target.NAMEOFVALUEOFINPUTFROMINDEX;
+    let loginInput = event.target.'NAME OF VALUE OF INPUT FROM INDEX';
     for (let i =0; i<allMerchants.length; i++){
 
         //if it is the correct login info
@@ -111,6 +123,24 @@ function loginHandler(event){
 
 //creates eventlistener for the button named in merchantLogin
 merchantLogin.addEventListener('click',loginHandler);
+
+
+
+
+// targets merchant drop down menu to select their company
+let merchantSelect = document.getElementById('THE DROP DOWN SELECTION ON THE MERCHANT PAGE');
+
+// assigns the merchant into stored memory  SHOULD THIS JUST BE SETTING A GLOBAL VARIABLE TO SET PROPERTIES OF PRODUCTS OR SHOULD IT BE A STORED VALUE
+function merchantStoreSelectHandler(event){
+    event.preventDefualt();
+    let {WHATEVER VALUE WE CHOOSE FOR THE DROP DOWN} = event.target;
+    let storedMerchant = JSON.stringify(WHATEVER VALUE WE CHOOSE FOR THE DROP DOWN);
+    localStorage.setItem('selectedCompany',storedMerchant)
+}
+
+// adds an eventlistener to the drop down menu on merchant selection
+merchantSelect.addEventListener('submit',merchantStoreSelectHandler);
+
 
 
 
