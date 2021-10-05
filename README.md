@@ -62,7 +62,7 @@ Sam: 10 pm
 - Everyone will work on fresh beaches each day
 - Plan for 5:00 pm pull request
 
-### Day 1:
+## Day 1:
 - Team Alpha Wolf Squadron gathered at the appointed time of 9:00am. The team creates a work board on Trello to define their user Stories. This defines the Minimum Viable Product(MVP) is a merchant user(MU) can add and remove items from the store and a customer user(CU) can add and remove items from their cart before checking out.
 
 #### Other goals the user Stories identifies:
@@ -83,8 +83,14 @@ Sam: 10 pm
     2. The customer info form
 
 #### The team then splits the separate pages html between Joey, Andrew, and K'lan. Sam started on some basic JavaSript.
-  - Joey selected a [color palette](https://www.canva.com/colors/color-palettes/bright-lights/) for the project
+  - Joey selectes a [color palette](https://www.canva.com/colors/color-palettes/bright-lights/) for the project
   - Joey creates the HTML and CSS for the index page
   - K'lan creates the HTML and CSS for the cart page
   - Andrew creates the HTML and Css for the merchant page
+  - Sam creates basic constructor functions that are identified in the [problem domain](/assets/storefront2.png)
+
+#### Team comes together at 5:15pm to reconvene for the day and push all current work to the main branch
+  - Each member shares back to the team about what they did today
+  - The team plans to make styling consistent across all pages interms of header and color choice
+
 
