@@ -23,8 +23,41 @@
 ## Stretch Goals
 - Search Bar
 - Reviews
-- Merchant upload picture for new items
+- [Merchant upload picture for new items](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications)
+  - the `img.src = URL.createObjectURL(this.files[i]);` seems promising
+  - credit: *developer.mozilla.org*
 - Featured section for items
+
+ ```js
+ function featuredItem(){
+     let range = allProducts.length
+     let randomProduct = Math.round(Math.random()*range);
+     let chosenItem = allProducts[randomProduct]
+
+    targetIDattributetoSETnewValue('featuredName','textContent',chosenItem.name);
+    targetIDattributetoSETnewValue('featuredImage','src',chosenItem.filePath;
+    targetIDattributetoSETnewValue('featuredDescript','textContent',chosenItem.descript);
+    targetIDattributetoSETnewValue('featuredPrice','textContent',chosenItem.price;
+
+     let featuredItemName = document.getElementById('featuredName');
+     featureItemName.textContent = chosenItem.name; 
+     let featuredItemImage = document.getElementById('featuredImage');
+     featuredItemImage.src = chosenItem.filePath;
+     let featuredItemDescription = document.getElementById('featuredDescript');
+     featuredItemDescription.textContent = chosenItem.descript;
+     let featuredItemPrice = document.getElementById('featuredPrice');
+     featuredItemPrice.textContent = chosenItem.price
+
+ }
+
+ function targetIDattributetoSETnewValue(elementBeingTargeted,whichAttributeIsBeingSet,toWhatValueitisSetTo){
+     let targetEl = document.getElementById(elementBeingTargeted);
+     targetEl[whichAttributeIsBeingSet]=towhatValueitisSetTo;
+
+ }
+ ```
+
+
 - Have multiple merchants have their own store on page and website connects all together
 
 ## Functional Requirements
