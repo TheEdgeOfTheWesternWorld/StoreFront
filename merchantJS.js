@@ -87,6 +87,12 @@ const addToTable = function(productsObject) {
     tr.appendChild(td);
     tbody.appendChild(tr);
 }
+
+const saveItems = function() { 
+    let toSave = JSON.stringify(allProducts);
+    localStorage.setItem("productList",toSave);
+
+}
 /*
 
 const removeFromTable = function(productName) {
