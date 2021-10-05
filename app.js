@@ -3,6 +3,7 @@
 allProducts =[];
 
 //creates instances of products and stores it in allProducts
+// NEEDS TO BE TESTED
 function Products(productName,productImage,productPrice,productQuantity) {
     if(recoverStoredMerchant()){
         this.company = recoverStoredMerchant();
@@ -29,6 +30,7 @@ console.log(testCar);
 
 
 // creates cart items
+// NEEDS TO BE TESTED
 function CartItem (product,quantity){
     for (let i = 0; i<allProducts.length; i ++){
         if(product === allProducts[i].productName){
@@ -43,18 +45,21 @@ function CartItem (product,quantity){
 
 
 // creates Cart
+// NEEDS TO BE TESTED
 const Cart = function(items){
     this.items = items;
 }
 
 //add function to add an item to cart
+// NEEDS TO BE TESTED
 Cart.prototype.addItem = function(product,quantity){
     let item = new CartItem(product,quantity);
     this.items.push(item);
 
 }
 
-//add function to remove item from cart
+//add function to remove item from cart 
+// NEEDS TO BE TESTED
 Cart.prototype.removeItem = function(product,quantity){
     let modifiedCart = [];
     for(let i =0; i<this.items.length; i++){
@@ -75,7 +80,8 @@ Cart.prototype.removeItem = function(product,quantity){
 allMerchants = [];
 
 //creates instances of merchants and stores them in allMerchants
-function Merchants('nameOfCompany', 'contactEmail'){
+// NEEDS TO BE TESTED
+function Merchants(nameOfCompany, contactEmail){
     this.nameOfCompany = this.nameOfCompany;
     this.contactEmail = this.contactEmail;
     allMerchants.push(this);
@@ -93,6 +99,7 @@ console.log(testMerchant);
 let merchantLogin = document.getElementById('BUTTON--CHANGE TO MATCH INDEX PAGE');
 
 // creates both a link to the merchant page and denies access if it is the wrong login
+// NEEDS TO BE TESTED
 function loginHandler(event){
     event.preventDefualt();
     let loginInput = event.target.'NAME OF VALUE OF INPUT FROM INDEX';
@@ -131,6 +138,7 @@ merchantLogin.addEventListener('click',loginHandler);
 let merchantSelect = document.getElementById('THE DROP DOWN SELECTION ON THE MERCHANT PAGE');
 
 // assigns the merchant into stored memory  SHOULD THIS JUST BE SETTING A GLOBAL VARIABLE TO SET PROPERTIES OF PRODUCTS OR SHOULD IT BE A STORED VALUE
+// NEEDS TO BE TESTED
 function merchantStoreSelectHandler(event){
     event.preventDefualt();
     let {WHATEVER VALUE WE CHOOSE FOR THE DROP DOWN} = event.target;
@@ -148,6 +156,7 @@ merchantSelect.addEventListener('submit',merchantStoreSelectHandler);
 let merchantFormInput = document.getElementById('FORM TO CREATE MERCHANTS');
 
 //gathers data to create new company
+// NEEDS TO BE TESTED
 function merchantFormHandler(event){
     event.preventDefualt();
     let {companyName, email} = event.target
