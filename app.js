@@ -139,7 +139,7 @@ function renderItem(){
         buttonEl.textContent = 'Add to my Stuff!';
         let inputValue = document.createElement ('input');
         let labelValue = document.createElement('label');
-        labelValue.innerText = 'How many stuffs?';
+        labelValue.innerText = '<--How Many Stuffs';
 
         inputValue.setAttribute('name', 'quantity');
 
@@ -179,7 +179,7 @@ function createCartCounter(cartLength){
     cartCounter.innerHTML = '';
     let cartLink = document.createElement('a');
     cartLink.setAttribute('href','checkout.html');
-    cartLink.textContent = 'Your Stuff'
+    cartLink.textContent = 'Your Stuff  '
     cartCounter.appendChild(cartLink);
     let pEl = document.createElement('p');
     pEl.textContent = cartLength;
