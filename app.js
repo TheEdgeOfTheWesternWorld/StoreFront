@@ -15,13 +15,14 @@ function retrieveProducts(){
 retrieveProducts();
 
 //creates instances of products and stores it in allProducts
-function Products(productName,productImage,productPrice,productQuantity) {
+function Products(productName,productImage,productPrice,productDeets,productQuantity) {
     if(recoverStoredMerchant()){
         this.company = recoverStoredMerchant();
     }
     this.productName = productName;
     this.productImage = productImage;
     this.productPrice = productPrice;
+    this.productDeets = productDeets;
     this.productQuantity = productQuantity;
     allProducts.push(this);
 
@@ -100,11 +101,11 @@ Cart.prototype.retreiveCart = function(){
 
 let cart = new Cart([]);
 console.log(cart);
-    let testCar = new Products('Glory Days Letter Jacket','assets/jacket.jpg',250,4000);
-    new Products('Lifesize Darth Vader', 'assets/vader.jpg',66066,20);
-    new Products('Sick Longboard', 'assets/longboard.jpg',125,2000);
-    new Products('Rad Coder\'s Computer', 'assets/computer.jpg',2500,200);
-    new Products('The Corvette Compensator', 'assets/car.jpg',125000,2);
+    let testCar = new Products('Glory Days Letter Jacket',250,'assets/jacket.jpg','Did you almost get to start for the Homecoming game? You know you would have made that game-winning touchdown had the coach only seen your natural talent. Even passed on that full-ride because of that stupid kneee injury amiright? Well have no fear, we bring you the Glory Days Letter Jacket. You can smell the nastalgia!',4000);
+    new Products('Lifesize Darth Vader', 'assets/vader.jpg',66,'He IS your Father, he IS the almighty Lord of the Sith himself. And NOW - for a limited time, you too can have your Daddy, Lord Vader, stand magestically wherever you need him to. Priced in honor of the order that changed the galaxy - order 66.',20);
+    new Products('Sick Longboard', 'assets/longboard.jpg',125,'Want to look SICK this summer? Then get this sick longboard, bro! You\'ll rip it up, chredding that asphalt like a real dopelicious, cowabunga, shaka throwing, mamajamma...or something. Just buy the board, it\'s everything you need dude, trust us.',2000);
+    new Products('Rad Coder\'s Computer', 'assets/computer.jpg',2500,'Ripping a gnarly code tear? Trying to see what your ex is up to on their webcam that\'s not covered? Want to be an international superspy? Are you ANONYMOUS?! Well look no further homie, we have the rig you never knew you always needed, built for speed, decorated to impress, colors to die for, and yes yes...you\'ll be able to code your whole face off, man.',200);
+    new Products('The Corvette Compensator', 'assets/car.jpg',125000,'Mid-life crisis got you down? Does that Miller High Life not go down as smooth? Tired of all those snotty little punks revving their four cylinder bangers at you...we know, bud, we know. But guess what?! This Corvette compensator comes with a built in, uh, let\'s just say it will make your whole year! You\'re gonna feel 19 again in no time my guy, no time. You CAN afford it, what\'s a little debt anyway right?! Plus trust us - you DESERVE it. Hell yeah brother!!',2);
  
 
 function recoverStoredMerchant(){
@@ -133,7 +134,7 @@ function renderItem(){
         imageEl.src = productImage;
         let descriptionEl = document.createElement('h4');
         let priceEl = document.createElement('h5');
-        priceEl.textContent = productPrice;
+        priceEl.textContent = '$ ' + productPrice;
         let formEl = document.createElement('form');
         formEl.setAttribute('id', productName);
         let buttonEl = document.createElement('button');
