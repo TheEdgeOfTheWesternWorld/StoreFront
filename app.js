@@ -1,6 +1,17 @@
 
 // contains all sellable products
-allProducts =[];
+allProducts =[
+    // 'banana.jpg',
+    // 'car.jpg',
+    // 'computer.jpg',
+    // 'jacket.jpg',
+    // 'longboard.jpg',
+    // 'oranges.jpg',
+    // 'vader.jpg',
+    // 'vest.jpg',
+    // 'jacket2.jpg',
+    // 'oreo.jpg',
+];
 
 //creates instances of products and stores it in allProducts
 // NEEDS TO BE TESTED
@@ -22,10 +33,70 @@ function recoverStoredMerchant(){
 }
 
 //using a test case
-let testCar = new Products('car','assets/car.jpg',4,4000)
+let testCar = new Products('car','assets/car.jpg',4,4000);
+new Products('oreo', 'assets/oreo.jpg',5,200); 
 
 //testing 
 console.log(testCar);
+console.log(allProducts);
+console.log(allProducts[1].productName);
+
+renderItem();
+
+function renderItem(){
+    let parentEl=document.getElementById('itemCard');
+    console.log(parentEl);
+
+    for (let i = 0; i<allProducts.length; i ++){
+        let productName = allProducts[i].productName;
+        let productImage = allProducts[i].productImage;
+        let productPrice = allProducts[i].productPrice;
+    
+        let divEl = document.createElement('div');
+        divEl.setAttribute('class', 'itemCard');
+        let itemNameEl = document.createElement('h3');
+        itemNameEl.setAttribute('id', productName);
+        itemNameEl.textContent = productName;
+        let imageEl = document.createElement('img');
+        imageEl.src = productImage;
+        let descriptionEl = document.createElement('h4');
+        let priceEl = document.createElement('h5');
+        priceEl.textContent = productPrice;
+        let formEl = document.createElement('form');
+        formEl.setAttribute('id', 'addForm');
+        let buttonEl = document.createElement('button');
+        buttonEl.id = productName;
+        buttonEl.textContent = 'Add to my Stuff!';
+        let inputValue = document.createElement ('input');
+        let labelValue = document.createElement('label');
+        labelValue.innerText = 'How many stuffs?';
+
+        inputValue.setAttribute('name', 'quantity');
+
+        divEl.appendChild(itemNameEl);
+        divEl.appendChild(imageEl);
+        divEl.appendChild(descriptionEl);
+        divEl.appendChild(priceEl);
+        divEl.appendChild(formEl);
+        formEl.appendChild(buttonEl);
+        formEl.appendChild(inputValue);
+        formEl.appendChild(labelValue);
+        parentEl.appendChild(divEl);
+    }
+}
+
+let productLanding=document.getElementById('addForm');
+
+function addStuff (event){
+    event.preventDefault();
+    let product = event.target.id;
+    let quantity = event.target.quantity;
+    let quantityTwo = 2;
+    console.log(product);
+    console.log(quantity.value);
+}
+
+productLanding.addEventListener('submit', addStuff);
 
 
 
@@ -109,13 +180,13 @@ console.log(testMerchant);
 
 
 // targets the button next to an input in the nav bar on the indes
-let merchantLogin = document.getElementById('BUTTON--CHANGE TO MATCH INDEX PAGE');
+let merchantLogin = document.getElementById('merchantAccess');
 
 // creates both a link to the merchant page and denies access if it is the wrong login
 // NEEDS TO BE TESTED
 function loginHandler(event){
     event.preventDefualt();
-    let loginInput = event.target.'NAME OF VALUE OF INPUT FROM INDEX';
+    let loginInput = event.target;
     for (let i =0; i<allMerchants.length; i++){
 
         //if it is the correct login info
@@ -152,15 +223,15 @@ let merchantSelect = document.getElementById('THE DROP DOWN SELECTION ON THE MER
 
 // assigns the merchant into stored memory  SHOULD THIS JUST BE SETTING A GLOBAL VARIABLE TO SET PROPERTIES OF PRODUCTS OR SHOULD IT BE A STORED VALUE
 // NEEDS TO BE TESTED
-function merchantStoreSelectHandler(event){
-    event.preventDefualt();
-    let {WHATEVER VALUE WE CHOOSE FOR THE DROP DOWN} = event.target;
-    let storedMerchant = JSON.stringify(WHATEVER VALUE WE CHOOSE FOR THE DROP DOWN);
-    localStorage.setItem('selectedCompany',storedMerchant)
-}
+// function merchantStoreSelectHandler(event){
+//     event.preventDefualt();
+//     let {WHATEVER VALUE WE CHOOSE FOR THE DROP DOWN} = event.target;
+//     let storedMerchant = JSON.stringify(WHATEVER VALUE WE CHOOSE FOR THE DROP DOWN);
+//     localStorage.setItem('selectedCompany',storedMerchant)
+// }
 
 // adds an eventlistener to the drop down menu on merchant selection
-merchantSelect.addEventListener('submit',merchantStoreSelectHandler);
+// merchantSelect.addEventListener('submit',merchantStoreSelectHandler);
 
 
 
