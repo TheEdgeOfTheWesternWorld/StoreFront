@@ -1,5 +1,22 @@
 'use strict';
 
+//==================================================
+/*let workingArray = allProducts;
+document.getElementById("search-form").addEventListener("submit",onSearch);
+let onSearch = function(event) {
+    let form = event.target;
+    let searchField = event.target.searchField.value;
+}*/
+//==================================================
+let checkLocalProducts = function() {
+    if(localStorage.getItem("productList")){
+        allProducts = [];
+        retrieveProducts()
+        console.log("reading");
+    }
+}
+
+checkLocalProducts();
 const hasProduct = function(productName) {
     let hasProduct = false;
     for(let i = 0; i < allProducts.length; i++) {
@@ -52,8 +69,9 @@ let productSubmit = function(event) {
     let name = newProduct.productName.value;
     let url = newProduct.imgURL.value;
     let price = newProduct.price.value;
+    let details = newProduct.details.value;
     let invQTY = newProduct.inventoryQuantity.value;
-    newProduct = new Products(name,url,price,invQTY);
+    newProduct = new Products(name,url,price,details,invQTY);
     renderTable();
     return newProduct;
 }
@@ -64,9 +82,16 @@ productForm.addEventListener("submit",productSubmit);
 
 let tbody = document.querySelector('tbody');
 
+const removeButtonOnClick = function(event) {
+    event.preventDefault();
+    console.log(event.target.parentElement.parentElement.id);
+    removeProductByName(event.target.parentElement.parentElement.id);
+    renderTable();
+}
 
 //needs to account for what merchant is calling
 const addToTable = function(productsObject) {
+    console.log("adding to table");
     //create row
     let tr = document.createElement("tr");
     tr.setAttribute("id", productsObject.productName);
@@ -140,27 +165,37 @@ const priceAdjustSubmit = function(event) {
 
 //======================================================
 
+const saveItems = function() { 
+    console.log("Saving");
+    let toSave = JSON.stringify(allProducts);
+    localStorage.setItem("productList",toSave);
+}
+
 let renderTable = function() {
+    console.log("renderTable");
     document.querySelector('tbody').innerHTML = "";
     for(let i = 0; i < allProducts.length; i++) {
+        console.log(i);
         addToTable(allProducts[i]);
     }
     saveItems();
 }
 
-const saveItems = function() { 
-    let toSave = JSON.stringify(allProducts);
-    localStorage.setItem("productList",toSave);
+renderTable();
+
+
+
+
+//==================================================
+
+let onSearchSubmit = function() {
+
 }
 
-const removeButtonOnClick = function(event) {
-    event.preventDefault();
-    console.log(event.target.parentElement.parentElement.id);
-    removeProductByName(event.target.parentElement.parentElement.id);
-    renderTable();
-}
+//===================================================
 
+/*
 let removeButton = document.querySelector("td a");
-removeButton.addEventListener("click",removeButtonOnClick);
+removeButton.addEventListener("click",removeButtonOnClick);*/
 
 
