@@ -16,7 +16,9 @@ header h1 {
     color:antiquewhite;
     font-family: 'Zen Dots', cursive;
     font-size: xx-large;
+    font-weight: 900;
     text-align: center;
+    letter-spacing: 10px;
     
 }
 .navItems {
@@ -32,10 +34,32 @@ header h1 {
     display: inline-block;
     justify-content: space-between;
     padding: 30px;
-
+    transition: transform .2s;
 }
 
-.navItems button {
+li p{
+    display: inline;
+}
+
+.navItems a{
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+    color:antiquewhite;
+}
+
+.navItems a:hover{
+    color:teal;
+    background-color: transparent;
+}
+
+li:hover{
+    color:teal;
+    background-color: transparent;
+    font-size: 200%;
+    transform: scale(2.0);
+}
+
+#merchantAccess {
     border-radius: 20px;
     padding: 20px;
     display: flex;
@@ -43,7 +67,7 @@ header h1 {
     
 }
 
-section {
+#itemCard {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
@@ -52,41 +76,71 @@ section {
     white-space: nowrap;
 }
 
-section .item1 {
-    float: right;
-    padding: 10px;
-    margin-left: 0;
-    margin-right: 0;
-
+#itemCard div {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 40px;
 }
 
-section .item2 {
-    float: left;
-    padding: 10px;
-    margin-left: 0;
-    margin-right: 0;
+#itemCard h3 {
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: larger;
+    font-weight: 500;
+    background-color:rgb(33, 33, 99);
+    color: rgb(209, 219, 245);
 }
 
-section .item3 {
-    float: left;
-    padding: 10px;
-    margin-left: 0;
-    margin-right: 0;
+#itemCard h4 {
+    text-align: left;
+    font-family: 'Bebas Neue', cursive;
+    font-size: larger;
+    font-weight: 500;
+    color: rgb(6, 15, 56);
 }
 
-section .item4 {
-    float: left;
-    padding: 10px;
-    margin-left: 0;
-    margin-right: 0;
+#itemCard h5 {
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: larger;
+    font-weight: 500;
+    color: red;
+    background-color: rgb(159, 182, 216);
+    border-radius: 50px;
+   
+  
+}
+
+#itemCard img{
+    width: 250px;
+}
+
+button:hover {
+    color:teal;
+    background-color: transparent;
+    transform: scale(1.5);
+}
+
+#itemCard button {
+    font-family: 'Bebas Neue', cursive;
+    font-size: larger;
+    font-weight: 500;
+    transition: transform .2s;
+    border-radius: 10%;
 }
 
 #footer {
     display: flex;
+    letter-spacing: 5px;
     justify-content: center;
     margin: 0;
     width: 100%;
     padding: 30px;
-    border-style: double;
+    font-family: 'Bebas Neue', cursive;
+    font-size: large;
+    border-style: inset;
     border-color: darkblue;
+    background-color: rgb(49, 80, 173);
+    color: rgb(9, 17, 26);
 }

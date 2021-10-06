@@ -1,56 +1,88 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Checkout</title>
+        <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="checkoutCSS.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">    <title>Capitalism Incorporated</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Zen+Dots&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
             <h1>Checkout</h1>
-            <nav>
+            <nav class="navItems">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
                 </ul>
+                <button><a href="index.html">Home</a></button>
             </nav>
         </header>
         <main>
-            <section id="cartInfo">
-                <h2>Cart Info</h2>
-                <p>some stuff</p>
+            <section>
+                <div class="cart-container">
+                    <h2>Cart Info</h2>
+                    <table id="cart">
+                        <thead>
+                            <tr id="cart-header">
+                                <th>Product</th>
+                                <th>Name</th>
+                                <th>QTY</th>
+                                <th>Price</th>
+                                <th>Remove</th>
+                            </tr>                            
+                        </thead>
+                        <tbody>
+                            <!-- <tr id="cart-row">
+                                <td>
+                                    <img src="assets/car.jpg" alt="car" id="product">
+                                </td>
+                                <td>CAR</td>
+                                <td>2</td>
+                                <td>$500</td>
+                                <td><img src="assets/trash-icon.jpg" alt="trash" id="trash"></td>
+                            </tr> -->
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
+                </div>
             </section>
 
             <section>
                 <form>
                     <fieldset>
                         <label for="firstName">First Name</label>
-                        <input type="text" required>
+                        <input type="text" class="textbox" autocomplete="off" required>
 
                         <label for="lastName">Last Name</label>
-                        <input type="text" autocomplete="off" required>
+                        <input type="text" class="textbox" autocomplete="off" required>
 
                         <label for="countryRegion">Country/Region</label>
-                        <input type="Text" autocomplete="off" required>
+                        <input type="text" class="textbox" autocomplete="off" required>
 
                         <label for="streetAddress">Street Address</label>
-                        <input type="Text" autocomplete="off" required>
+                        <input type="text" class="textbox" autocomplete="off" required>
 
                         <label for="city">City</label>
-                        <input type="Text" autocomplete="off" required>
+                        <input type="text" class="textbox" autocomplete="off" required>
 
                         <label for="state">State</label>
-                        <input type="Text" autocomplete="off" required>
+                        <input type="text" class="textbox" autocomplete="off" required>
 
                         <label for="zipcode">ZIP</label>
-                        <input type="number" autocomplete="off" required>
+                        <input type="number" class="textbox" autocomplete="off" required>
 
                         <label for="phone">Phone</label>
-                        <input type="number" autocomplete="off" required>
+                        <input type="number" class="textbox" autocomplete="off" required>
 
                         <label for="email">Email Address</label>
-                        <input type="Text" autocomplete="off" required>
+                        <input type="text" class="textbox" autocomplete="off" required>
 
                         <label for="cardInfo">Credit/Debit</label>
-                        <input type="number" autocomplete="off" required>
+                        <input type="number" class="textbox" autocomplete="off" required>
 
                         <input type="submit">
 
@@ -58,9 +90,8 @@
                 </form>
             </section>
         </main>
-        <footer>
-            <h1>&copy Capitalism Incorporated Co. 2021, All Rights Reserved</h1>
-        </footer>
+        <footer id="footer">&copy Capitalism Incorporated Co. 2021, All Rights Reserved</footer>
+        <script src="app.js"></script>
         <script src="checkoutJS.js"></script>
     </body>
 </html>
