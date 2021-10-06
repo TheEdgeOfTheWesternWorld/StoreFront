@@ -70,14 +70,15 @@ Cart.prototype.addItem = function(product,quantity){
 Cart.prototype.removeItem = function(product,quantity){
     let modifiedCart = [];
     for(let i =0; i<this.items.length; i++){
-        if (product === this.items[i].product && quantity ===this.items[i].quantity){
+        if (product === this.items[i].productName && quantity ===this.items[i].quantity){
+            console.log('hello');
             continue;
         }
         else{
             modifiedCart.push(this.items[i]);
         }
     }
-    
+    this.items = modifiedCart;
     
 }
 
