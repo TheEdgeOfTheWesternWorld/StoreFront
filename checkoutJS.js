@@ -1,8 +1,5 @@
 'use strict';
 
-
-
-
 const table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
 
@@ -13,7 +10,8 @@ function loadCart()
     cart = new Cart(cartItems);
     console.log(cart);
 }
-
+loadCart();
+console.log(cart);
 function renderCart() 
 {
     loadCart();
@@ -35,8 +33,8 @@ function showCart()
       let tableRow = document.createElement('tr');
 
       let itemData = document.createElement('td');
-      itemData.innerText = cart.items[i].product;
-      itemData.setAttribute('class', cart.items[i].product);
+      itemData.innerText = cart.items[i].productName;
+      itemData.setAttribute('class', cart.items[i].productName);
       
       let deleteButton = document.createElement('td');
       deleteButton.innerText = 'X';
@@ -46,19 +44,31 @@ function showCart()
       
       let quantityData = document.createElement('td'); 
       quantityData.innerText = cart.items[i].quantity;
-      
-      let pictureData = document.createElement('img');
-      for(let img = 0; img < allProducts.length; img++){
-        if(cart.items[i].product === allProducts[img].name){
-          pictureData.setAttribute('src',allProducts[img].filePath);
+
+      let priceData = document.createElement('td');
+      for(let price = 0; price < allProducts.length; price++)
+      {
+        if(cart.items[i].productName === allProducts[price].productName)
+        {
+          priceData.innerText = allProducts[price].productPrice;
           break;
         }
       }
       
-      tableRow.appendChild(deleteButton);
-      tableRow.appendChild(quantityData);
-      tableRow.appendChild(itemData);
+      let pictureData = document.createElement('img');
+      console.log(cart.items[0].productName);
+      for(let img = 0; img < allProducts.length; img++){
+        if(cart.items[i].productName === allProducts[img].productName){
+          pictureData.setAttribute('src',allProducts[img].productImage);
+          break;
+        }
+      }
+      
       tableRow.appendChild(pictureData);
+      tableRow.appendChild(itemData);
+      tableRow.appendChild(quantityData);
+      tableRow.appendChild(priceData);
+      tableRow.appendChild(deleteButton);
   
       clearTable.appendChild(tableRow);
     }
@@ -66,14 +76,16 @@ function showCart()
 
 function removeItemFromCart(event) 
 {
+
     let table = event.target.classList.contains('remover');
-    let proDuct =cart.items[parseInt(event.target.id)].product;
+    let proDuct =cart.items[parseInt(event.target.id)].productName;
     let qunt = cart.items[parseInt(event.target.id)].quantity;
     console.log(proDuct,qunt);
   
     if (table){
-      cart.removeItem(cart.items[parseInt(event.target.id)].product,cart.items[parseInt(event.target.id)].quantity);
-      cart.saveToLocalStorage();
+      cart.removeItem(proDuct, qunt);
+      console.log(cart.items);
+      cart.storeCart();
     }
   
     renderCart();
