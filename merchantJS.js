@@ -60,8 +60,9 @@ let productSubmit = function(event) {
     let name = newProduct.productName.value;
     let url = newProduct.imgURL.value;
     let price = newProduct.price.value;
+    let details = newProduct.details.value;
     let invQTY = newProduct.inventoryQuantity.value;
-    newProduct = new Products(name,url,price,invQTY);
+    newProduct = new Products(name,url,price,details,invQTY);
     renderTable();
     return newProduct;
 }
