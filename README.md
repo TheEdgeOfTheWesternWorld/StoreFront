@@ -63,7 +63,7 @@ Sam: 10 pm
 - Plan for 5:00 pm pull request
 
 ## Day 1:
-- Team Alpha Wolf Squadron gathered at the appointed time of 9:00am. The team creates a work board on Trello to define their user Stories. This defines the Minimum Viable Product(MVP) is a merchant user(MU) can add and remove items from the store and a customer user(CU) can add and remove items from their cart before checking out.
+- Team Alpha Wolf Squadron gather at the appointed time of 9:00am. The team creates a work board on Trello to define their user Stories. This defines the Minimum Viable Product(MVP) is a merchant user(MU) can add and remove items from the store and a customer user(CU) can add and remove items from their cart before checking out.
 
 #### Other goals the user Stories identifies:
   - Updates inventory in real time after purchase
@@ -92,5 +92,18 @@ Sam: 10 pm
 #### Team comes together at 5:15pm to reconvene for the day and push all current work to the main branch
   - Each member shares back to the team about what they did today
   - The team plans to make styling consistent across all pages interms of header and color choice
+
+## Day 2:
+- Team Alpha Wolf Squadron met at the agreeded upon time of 9:00am
+
+#### Team focused on making styling consistent
+- The team updates all the styling on the pages for a consistent look.
+  - Makes the header more uniform in apperence
+  - Coordinates style of icons and tiles
+
+#### Team focus changes to JavaScript and making a MVP
+- Andrew works on the table on the merchant page
+- K'lan works on setting up the JavaScript for the checkout page table
+- Joey and Sam work on rendering the items Andrew adds to the total products
 
 
