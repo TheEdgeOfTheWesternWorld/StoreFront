@@ -74,6 +74,7 @@ let renderTable = function() {
     for(let i = 0; i < allProducts.length; i++) {
         addToTable(allProducts[i]);
     }
+    saveItems();
 }
 
 const saveItems = function() { 
@@ -98,6 +99,7 @@ const removeButtonOnClick = function(event) {
     event.preventDefault();
     console.log(event.target.parentElement.parentElement.id);
     removeProductByName(event.target.parentElement.parentElement.id);
+    renderTable();
     //tr = event.target.parentElement.parentElement;
     //trId = tr.id;
     //removeFromTable(trId);
