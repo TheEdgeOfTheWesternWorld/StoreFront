@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="merchantCSS.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">   
+        <title>Capitalism Incorporated</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Zen+Dots&display=swap" rel="stylesheet">
+            
     </head>
     <body>
         <header>
-            <h1>Merchant Info</h1>
+            <h1>Capitalism Incorporated</h1>
+            <nav class="navItems">
+                <ul>
+                    <li><a>About Us</a></li>
+                    <li><a>Contact Us</a></li>
+                    <li><a>Your Stuff</a></li>
+                </ul>
+                <button><a href="index.html">Customer Portal</a></button>
+            </nav>
         </header>
         <main>
             <section>
@@ -39,7 +58,7 @@
                             <td>PRODUCTNAME</td>
                             <td>PRICE</td>
                             <td>INVENTORYQTY</td>
-                            <td><button>Remove Item</button></td>
+                            <td><a href ="#">Remove Item</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -67,7 +86,7 @@
                             <label>Inventory Quantity</label>
                             <input name="inventoryQuantity" type="number" step="1">
                         </div>
-                        <input type="submit">
+                        <input id="submit-button" type="submit">
                     </fieldset>
                 </form>
             <section>
@@ -79,4 +98,6 @@
             &copy Capitalism Incorporated 2021 all rights reserved
         </footer>
     </body>
+    <script src="app.js"></script>
+    <script src="merchantJS.js"></script>
 </html>
