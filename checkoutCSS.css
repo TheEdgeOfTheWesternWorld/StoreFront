@@ -1,42 +1,167 @@
-#cartInfo
-{
-    border: 1px solid black;
-    margin-bottom: 30px;
-    width: 200px;
+header 
+{    
+    background-image: url(https://www.seaciti.org/2021/wp-content/uploads/2020/03/covid_header-1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    padding: 30px;
 }
 
-ul
+h1
 {
-    margin-bottom: 20px;
-    padding: 0;
-    width: 50px;
-    list-style-type: none;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+    color:antiquewhite;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-family: 'Bebas Neue', cursive;
+    text-decoration: underline;
+}
+
+.cart-container
+{
+    float: left;
+    /* width: 950px; */
+    margin-right: 50px;
+    margin-left: 30px;
+    /* margin-bottom: 150px; */
+    padding: 15px;
+    margin-top: 25px;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: none;
+}
+
+tr 
+{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5em;
+    border-bottom: 1px solid black;
+}
+
+tr #cart-row
+{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+tr #cart-header 
+{
+    vertical-align: bottom;
+    border-bottom: 2px solid black;
+}
+
+table td
+{
+    width: 150px;
+    margin-top: 0.7em;
+    height: auto;
     text-align: center;
+    vertical-align: middle;
+}
+
+#product
+{
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+}
+
+#trash
+{
+    max-width: 100%;
+    height: 35px;
+}
+
+td:last-child
+{
+    width: 55px;
+    height: 35px;
+}
+
+.navItems 
+{
+    color:antiquewhite;
+    text-align: center;
+    position: relative;
+}
+
+.navItems li 
+{
+    list-style: none;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+    display: inline-block;
+    justify-content: space-between;
+    padding: 30px;
+
+}
+
+.navItems button 
+{
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    background-color: darkkhaki;
+    
+}
+
+main 
+{
+    display: flex;
+    align-items: flex-start;
 }
 
 form
 {
-    margin: auto;
-    width: 400px;
+    margin-top: 25px;
+    width: 600px;
+    border-radius: 5px;
+    margin-bottom: 150px;
+    padding: 15px 0px 15px 15px;
+    text-align: justify;
+    display: flex;
+    align-items: flex-start;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
 }
 
 label
 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
     display: block;
+    padding-bottom: 1px;
+    padding-top: 1px;
 }
 
-li
+#footer 
 {
-    padding: 5px;
-}
-
-footer
-{
-    background-color: #68BBE3;
+    font-family: 'Bebas Neue', cursive;
+    position: fixed;
+    bottom: 0;
     text-align: center;
+    font-size: 2em;
+    width: 100%;
+    height: 60px;
+    padding-top: 40px;
+    background-color: #0E86D4;
 }
 
-header
+
+.textbox
 {
-    background-color: #68BBE3;
+    width: 450px;
+    height: 30px;
 }
+
+
