@@ -11,14 +11,18 @@ const hasProduct = function(productName) {
 }
 
 const removeProductByName = function(productName) {
-    let newArr = [];
-    for(let i = 0; i < allProducts.length; i++) {
-        if(!allProducts[i].productName === productName) {
-            newArr.push(allProducts[i]);
-        }// else this is the product being removed, do nothing
+    if(hasProduct(productName)){
+        let removeIndex;
+        for(let i = 0; i  < allProducts.length;i++) {
+            if(allProducts[i].productName === productName){
+                removeIndex = i;
+            }
+        }
+        allProducts[removeIndex] = allProducts[allProducts.length - 1];
+        allProducts.pop();
     }
-    allProducts = newArr;
 }
+
 
 //Needs to account for which merchant has added a new product
 let productSubmit = function(event) {
@@ -29,8 +33,9 @@ let productSubmit = function(event) {
     let price = newProduct.price.value;
     let invQTY = newProduct.inventoryQuantity.value;
     newProduct = new Products(name,url,price,invQTY);
-    allProducts.push(newProduct);
-    addToTable(newProduct);
+    //saveItems();
+    //addToTable(newProduct);
+    renderTable();
     return newProduct;
 }
 
@@ -40,10 +45,11 @@ productForm.addEventListener("submit",productSubmit);
 
 let tbody = document.querySelector('tbody');
 
+
 //needs to account for what merchant is calling
 const addToTable = function(productsObject) {
     let tr = document.createElement("tr");
-    tr.id = productsObject.productName;
+    tr.setAttribute("id", productsObject.productName);
     let td = document.createElement("td");
     td.innerHTML = productsObject.productName;
     tr.appendChild(td);
@@ -54,17 +60,27 @@ const addToTable = function(productsObject) {
     td.innerHTML = productsObject.productQuantity;
     tr.appendChild(td);
     td = document.createElement('td');
-    td.innerHTML = '<button>Remove Item</button>';
-    td.id = productsObject.productName;
+    let a = document.createElement('a');
+    a.innerHTML = "Remove Item";
+    a.setAttribute("href","#");
+    a.addEventListener("click",removeButtonOnClick);
+    td.appendChild(a);
     tr.appendChild(td);
     tbody.appendChild(tr);
+}
+
+let renderTable = function() {
+    document.querySelector('tbody').innerHTML = "";
+    for(let i = 0; i < allProducts.length; i++) {
+        addToTable(allProducts[i]);
+    }
 }
 
 const saveItems = function() { 
     let toSave = JSON.stringify(allProducts);
     localStorage.setItem("productList",toSave);
-
 }
+
 
 /*
 
@@ -76,17 +92,19 @@ const removeFromTable = function(productName) {
             addToTable(allProducts[i]);
         }
     }
-}
+}*/
 
 const removeButtonOnClick = function(event) {
     event.preventDefault();
-    console.log("remove!");
-    tr = event.target.parentElement.parentElement;
-    trId = tr.id;
-    removeFromTable(trId);
+    console.log(event.target.parentElement.parentElement.id);
+    removeProductByName(event.target.parentElement.parentElement.id);
+    //tr = event.target.parentElement.parentElement;
+    //trId = tr.id;
+    //removeFromTable(trId);
 }
 
-let removeButtons = document.getElementById("");
-removeButtons.addEventListener("click",removeButtonOnClick);
-*/
+let removeButton = document.querySelector("td a");
+removeButton.addEventListener("click",removeButtonOnClick);
+//removeButtons.addEventListener("click",removeButtonOnClick);
+
 
