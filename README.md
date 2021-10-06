@@ -62,4 +62,35 @@ Sam: 10 pm
 - Everyone will work on fresh beaches each day
 - Plan for 5:00 pm pull request
 
+## Day 1:
+- Team Alpha Wolf Squadron gathered at the appointed time of 9:00am. The team creates a work board on Trello to define their user Stories. This defines the Minimum Viable Product(MVP) is a merchant user(MU) can add and remove items from the store and a customer user(CU) can add and remove items from their cart before checking out.
+
+#### Other goals the user Stories identifies:
+  - Updates inventory in real time after purchase
+  - Price totaling
+  - Adding more merchants to the page
+  - Some filtering of items or search bar
+  - possibly individual store fronts for different merchants
+
+#### Team creates a wireframe for what the pages look like
+  - The home page is styled after [Patagonia's Page](https://www.patagonia.com/shop/clothing-gear/);
+  - The merchant page was broken into two sections
+    1. Merchant info: what they are selling, at what price, and how many are left
+    2. The form to add more items for sale
+    - discussion takes place of also returning sales data to the merchant here as well
+  - The cart page takes design around two sections
+    1. The cart that is rendered here as a review of items
+    2. The customer info form
+
+#### The team then splits the separate pages html between Joey, Andrew, and K'lan. Sam started on some basic JavaSript.
+  - Joey selectes a [color palette](https://www.canva.com/colors/color-palettes/bright-lights/) for the project
+  - Joey creates the HTML and CSS for the index page
+  - K'lan creates the HTML and CSS for the cart page
+  - Andrew creates the HTML and Css for the merchant page
+  - Sam creates basic constructor functions that are identified in the [problem domain](/assets/storefront2.png)
+
+#### Team comes together at 5:15pm to reconvene for the day and push all current work to the main branch
+  - Each member shares back to the team about what they did today
+  - The team plans to make styling consistent across all pages interms of header and color choice
+
 
