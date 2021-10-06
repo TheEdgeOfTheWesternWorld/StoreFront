@@ -1,14 +1,10 @@
 'use strict';
 
 
-// console.log('hello');
-// console.log(testCar);
-// Cart.additem(testCar, 2);
-// Cart.storeCart();
+
 
 const table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
-let cart;
 
 function loadCart() 
 {
@@ -52,9 +48,9 @@ function showCart()
       quantityData.innerText = cart.items[i].quantity;
       
       let pictureData = document.createElement('img');
-      for(let img = 0; img < Product.allProducts.length; img++){
-        if(cart.items[i].product === Product.allProducts[img].name){
-          pictureData.setAttribute('src',Product.allProducts[img].filePath);
+      for(let img = 0; img < allProducts.length; img++){
+        if(cart.items[i].product === allProducts[img].name){
+          pictureData.setAttribute('src',allProducts[img].filePath);
           break;
         }
       }

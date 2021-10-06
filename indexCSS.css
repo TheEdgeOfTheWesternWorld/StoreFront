@@ -37,6 +37,21 @@ header h1 {
     transition: transform .2s;
 }
 
+li p{
+    display: inline;
+}
+
+.navItems a{
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+    color:antiquewhite;
+}
+
+.navItems a:hover{
+    color:teal;
+    background-color: transparent;
+}
+
 li:hover{
     color:teal;
     background-color: transparent;
@@ -93,13 +108,17 @@ li:hover{
     color: red;
 }
 
+#itemCard img{
+    width: 250px;
+}
+
 button:hover {
     color:teal;
     background-color: transparent;
     transform: scale(1.5);
 }
 
-.itemCard button {
+#itemCard button {
     font-family: 'Bebas Neue', cursive;
     font-size: larger;
     font-weight: 500;
