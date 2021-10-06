@@ -1,4 +1,13 @@
 'use strict';
+
+//==================================================
+/*let workingArray = allProducts;
+document.getElementById("search-form").addEventListener("submit",onSearch);
+let onSearch = function(event) {
+    let form = event.target;
+    let searchField = event.target.searchField.value;
+}*/
+//==================================================
 let checkLocalProducts = function() {
     if(localStorage.getItem("productList")){
         allProducts = [];
@@ -178,12 +187,11 @@ renderTable();
 
 
 //==================================================
-/*const readItems = function() {
-    let readProductsArray = JSON.parse(localStorage.getItem("productList"));
-    for (let i = 0; i< readProductsArray.length; i++) {
 
-    }
-}*/
+let onSearchSubmit = function() {
+
+}
+
 //===================================================
 
 /*
