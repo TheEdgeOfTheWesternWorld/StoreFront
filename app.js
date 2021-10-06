@@ -100,10 +100,12 @@ Cart.prototype.retreiveCart = function(){
 
 let cart = new Cart([]);
 console.log(cart);
-// let testCar = new Products('car','assets/car.jpg',4,4000);
-// new Products('oreo', 'assets/oreo.jpg',5,200); 
-
-
+    let testCar = new Products('Glory Days Letter Jacket','assets/jacket.jpg',250,4000);
+    new Products('Lifesize Darth Vader', 'assets/vader.jpg',66066,20);
+    new Products('Sick Longboard', 'assets/longboard.jpg',125,2000);
+    new Products('Rad Coder\'s Computer', 'assets/computer.jpg',2500,200);
+    new Products('The Corvette Compensator', 'assets/car.jpg',125000,2);
+ 
 
 function recoverStoredMerchant(){
     let selectedMerchant = JSON.parse(localStorage.getItem('selectedCompany'));
@@ -139,7 +141,7 @@ function renderItem(){
         buttonEl.textContent = 'Add to my Stuff!';
         let inputValue = document.createElement ('input');
         let labelValue = document.createElement('label');
-        labelValue.innerText = 'How many stuffs?';
+        labelValue.innerText = '<--How Many Stuffs';
 
         inputValue.setAttribute('name', 'quantity');
 
@@ -179,7 +181,7 @@ function createCartCounter(cartLength){
     cartCounter.innerHTML = '';
     let cartLink = document.createElement('a');
     cartLink.setAttribute('href','checkout.html');
-    cartLink.textContent = 'Your Stuff'
+    cartLink.textContent = 'Your Stuff  '
     cartCounter.appendChild(cartLink);
     let pEl = document.createElement('p');
     pEl.textContent = cartLength;

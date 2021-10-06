@@ -6,6 +6,7 @@ header {
     background-image: url(https://www.seaciti.org/2021/wp-content/uploads/2020/03/covid_header-1.jpg);
     background-repeat: no-repeat;
     background-attachment: scroll;
+    background-size: cover;
     height: 300px;
     width: 100%;
     padding: 30px;
@@ -109,7 +110,6 @@ li:hover{
     background-color: rgb(159, 182, 216);
     border-radius: 50px;
    
-  
 }
 
 #itemCard img{
@@ -117,17 +117,30 @@ li:hover{
 }
 
 button:hover {
-    color:teal;
+    color:rgb(72, 196, 23);
     background-color: transparent;
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 #itemCard button {
     font-family: 'Bebas Neue', cursive;
-    font-size: larger;
+    font-size:medium;
     font-weight: 500;
     transition: transform .2s;
     border-radius: 10%;
+}
+
+#itemCard input {
+    font-family: 'Bebas Neue', cursive;
+    font-size:medium;
+    text-align: center;
+    border-radius: 20px;
+    border-style: groove;
+    border-color: darkgreen;
+    width: 30px;
+    padding-left: 10px;
+    margin: 20px;
+
 }
 
 #footer {
@@ -142,5 +155,6 @@ button:hover {
     border-style: inset;
     border-color: darkblue;
     background-color: rgb(49, 80, 173);
+    background-size: cover;
     color: rgb(9, 17, 26);
 }
