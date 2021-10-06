@@ -69,10 +69,12 @@ Cart.prototype.addItem = function(product,quantity){
 
 //add function to remove item from cart 
 Cart.prototype.removeItem = function(product,quantity){
+    let round1 = true;
     let modifiedCart = [];
     for(let i =0; i<this.items.length; i++){
-        if (product === this.items[i].productName && quantity ===this.items[i].quantity){
+        if (product === this.items[i].productName && quantity ===this.items[i].quantity && round1 === true){
             console.log('hello');
+            round1 = false;
             continue;
         }
         else{
