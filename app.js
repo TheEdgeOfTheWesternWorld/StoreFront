@@ -84,6 +84,7 @@ Cart.prototype.removeItem = function(product,quantity){
 
 //storing cart in local storage
 Cart.prototype.storeCart = function(){
+
     let storedCart = JSON.stringify(this.items);
     localStorage.setItem('cart',storedCart);
 }
@@ -112,8 +113,8 @@ renderItem();
 
 // prints all items in to itemCards
 function renderItem(){
-    let parentEl=document.getElementById('itemCard');
-    parentEl.innerHTML ='';
+    let landingPageEl=document.getElementById('itemCard');
+    landingPageEl.innerHTML ='';
 
     for (let i = 0; i<allProducts.length; i ++){
         let productName = allProducts[i].productName;
@@ -149,7 +150,7 @@ function renderItem(){
         formEl.appendChild(buttonEl);
         formEl.appendChild(inputValue);
         formEl.appendChild(labelValue);
-        parentEl.appendChild(divEl);
+        landingPageEl.appendChild(divEl);
     }
 }
 
@@ -163,22 +164,26 @@ function addStuff (event){
     if (quantity.value){
     cart.addItem(product,quantity.value);
     console.log(cart.items);
-    let cartCounter = document.getElementById('cartLink');
-    console.log(cartCounter);
-    cartCounter.innerHTML = '';
-    cartCounter.textContent = 'Your Stuff'
-    let pEl = document.createElement('p');
-    pEl.textContent = cart.items.length;
-    cartCounter.appendChild(pEl);
-    }
+    createCartCounter(cart.items.length);
+    cart.storeCart();
+}
 
 }
 
 productLanding.addEventListener('submit', addStuff);
 
-
-// creates cart items
-// NEEDS TO BE TESTED
+function createCartCounter(cartLength){
+    let cartCounter = document.getElementById('cartLink');
+    console.log(cartCounter);
+    cartCounter.innerHTML = '';
+    let cartLink = document.createElement('a');
+    cartLink.setAttribute('href','checkout.html');
+    cartLink.textContent = 'Your Stuff'
+    cartCounter.appendChild(cartLink);
+    let pEl = document.createElement('p');
+    pEl.textContent = cartLength;
+    cartCounter.appendChild(pEl);
+}
 
 
 
