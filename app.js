@@ -100,10 +100,12 @@ Cart.prototype.retreiveCart = function(){
 
 let cart = new Cart([]);
 console.log(cart);
-// let testCar = new Products('car','assets/car.jpg',4,4000);
-// new Products('oreo', 'assets/oreo.jpg',5,200); 
-
-
+    let testCar = new Products('Glory Days Letter Jacket','assets/jacket.jpg',250,4000);
+    new Products('Lifesize Darth Vader', 'assets/vader.jpg',66066,20);
+    new Products('Sick Longboard', 'assets/longboard.jpg',125,2000);
+    new Products('Rad Coder\'s Computer', 'assets/computer.jpg',2500,200);
+    new Products('The Corvette Compensator', 'assets/car.jpg',125000,2);
+ 
 
 function recoverStoredMerchant(){
     let selectedMerchant = JSON.parse(localStorage.getItem('selectedCompany'));
