@@ -33,8 +33,6 @@ let productSubmit = function(event) {
     let price = newProduct.price.value;
     let invQTY = newProduct.inventoryQuantity.value;
     newProduct = new Products(name,url,price,invQTY);
-    //saveItems();
-    //addToTable(newProduct);
     renderTable();
     return newProduct;
 }
@@ -82,31 +80,14 @@ const saveItems = function() {
     localStorage.setItem("productList",toSave);
 }
 
-
-/*
-
-const removeFromTable = function(productName) {
-    if(hasProduct(productName)) {
-        removeProductByName(productName);
-        document.querySelector('tbody').innerHTML = '';
-        for(let i = 0; i < allProducts.length; i++) {
-            addToTable(allProducts[i]);
-        }
-    }
-}*/
-
 const removeButtonOnClick = function(event) {
     event.preventDefault();
     console.log(event.target.parentElement.parentElement.id);
     removeProductByName(event.target.parentElement.parentElement.id);
     renderTable();
-    //tr = event.target.parentElement.parentElement;
-    //trId = tr.id;
-    //removeFromTable(trId);
 }
 
 let removeButton = document.querySelector("td a");
 removeButton.addEventListener("click",removeButtonOnClick);
-//removeButtons.addEventListener("click",removeButtonOnClick);
 
 
