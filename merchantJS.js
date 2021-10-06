@@ -91,17 +91,17 @@ const addToTable = function(productsObject) {
     tr.appendChild(td);
     //=========================================
     //create column for remove item button
-    td = document.createElement('td');
+    td = document.createElement('td');/*
     let a = document.createElement('a');
     a.innerHTML = "Remove Item";
     a.setAttribute("href","#");
     a.addEventListener("click",removeButtonOnClick);
-    td.appendChild(a);
-    /*
+    td.appendChild(a);*/
+    
     let removeBtn = document.createElement("button");
     removeBtn.innerHTML = "Remove Item";
-    btn.addEventListener("click",removeButtonOnClick);
-    td.appendChild(removeBtn);*/
+    removeBtn.addEventListener("click",removeButtonOnClick);
+    td.appendChild(removeBtn);
     tr.appendChild(td);
     tbody.appendChild(tr);
 }
