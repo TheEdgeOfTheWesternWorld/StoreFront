@@ -17,15 +17,29 @@ header h1 {
     color:antiquewhite;
     font-family: 'Zen Dots', cursive;
     font-size: xx-large;
+    font-size: 50px;
     font-weight: 900;
     text-align: center;
+    text-shadow: 6px 6px mediumblue;
     letter-spacing: 10px;
     
+}
+
+header h6 {
+    color:rgb(19, 63, 184);
+    font-family: 'Zen Dots', cursive;
+    font-size: medium;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 5px;
+    background-color: rgb(194, 183, 81);
+    border-radius: 10px;
+    width: 100%;
+
 }
 .navItems {
     color:antiquewhite;
     text-align: center;
-    position: relative;
 }
 
 .navItems li {
@@ -65,6 +79,8 @@ li:hover{
     padding: 20px;
     display: flex;
     background-color: darkkhaki;
+    color: black;
+    box-shadow: 5px 5px mediumblue;
     
 }
 
