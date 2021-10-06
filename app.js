@@ -1,20 +1,20 @@
 
+
 // contains all sellable products
-allProducts =[
-    // 'banana.jpg',
-    // 'car.jpg',
-    // 'computer.jpg',
-    // 'jacket.jpg',
-    // 'longboard.jpg',
-    // 'oranges.jpg',
-    // 'vader.jpg',
-    // 'vest.jpg',
-    // 'jacket2.jpg',
-    // 'oreo.jpg',
-];
+allProducts =[];
+
+//creates product list
+function retrieveProducts(){
+    let parsedProducts = JSON.parse(localStorage.getItem('productList'));
+    for( let i = 0; i<parsedProducts.length; i++){
+        let newProduct = parsedProducts[i]
+        new Products(newProduct.productName,newProduct.productImage,newProduct.productPrice,newProduct.productQuantity);
+    }
+}
+
+retrieveProducts();
 
 //creates instances of products and stores it in allProducts
-// NEEDS TO BE TESTED
 function Products(productName,productImage,productPrice,productQuantity) {
     if(recoverStoredMerchant()){
         this.company = recoverStoredMerchant();
@@ -27,25 +27,93 @@ function Products(productName,productImage,productPrice,productQuantity) {
 
 }
 
+// creates order Items
+function CartItem (product,quantity){
+    console.log(product);
+    console.log(allProducts[0].productName);
+    for (let i = 0; i<allProducts.length; i ++){
+        if(product === allProducts[i].productName){
+            this.productName =allProducts[i].productName;
+            break;
+        }
+        else{
+            console.log('hey you got problems creating CartItems');
+        }
+    }
+    this.quantity = quantity;
+}
+
+
+// creates Cart
+const Cart = function(items){
+    this.items = items;
+
+}
+
+//add function to add an item to cart
+Cart.prototype.addItem = function(product,quantity){
+    let item = new CartItem(product,quantity);
+    if(this.items){
+    console.log(this.items);
+    console.log(item);
+    this.items.push(item);
+    }
+    else{
+        this.items =[]
+        this.items.push(item);
+    }
+    
+}
+
+
+//add function to remove item from cart 
+Cart.prototype.removeItem = function(product,quantity){
+    let modifiedCart = [];
+    for(let i =0; i<this.items.length; i++){
+        if (product === this.items[i].product && quantity ===this.items[i].quantity){
+            continue;
+        }
+        else{
+            modifiedCart.push(this.items[i]);
+        }
+    }
+    
+    
+}
+
+
+//storing cart in local storage
+Cart.prototype.storeCart = function(){
+    let storedCart = JSON.stringify(this.items);
+    localStorage.setItem('cart',storedCart);
+}
+
+//retrieving cart from local storage
+Cart.prototype.retreiveCart = function(){
+    let retreivedCart = JSON.parse(localStorage.getItem('cart'));
+    let cart = new Cart(retreivedCart);
+}
+
+
+
+let cart = new Cart([]);
+console.log(cart);
+// let testCar = new Products('car','assets/car.jpg',4,4000);
+// new Products('oreo', 'assets/oreo.jpg',5,200); 
+
+
+
 function recoverStoredMerchant(){
     let selectedMerchant = JSON.parse(localStorage.getItem('selectedCompany'));
     return selectedMerchant
 }
 
-//using a test case
-let testCar = new Products('car','assets/car.jpg',4,4000);
-new Products('oreo', 'assets/oreo.jpg',5,200); 
-
-//testing 
-console.log(testCar);
-console.log(allProducts);
-console.log(allProducts[1].productName);
-
 renderItem();
 
+// prints all items in to itemCards
 function renderItem(){
     let parentEl=document.getElementById('itemCard');
-    console.log(parentEl);
+    parentEl.innerHTML ='';
 
     for (let i = 0; i<allProducts.length; i ++){
         let productName = allProducts[i].productName;
@@ -63,7 +131,7 @@ function renderItem(){
         let priceEl = document.createElement('h5');
         priceEl.textContent = productPrice;
         let formEl = document.createElement('form');
-        formEl.setAttribute('id', 'addForm');
+        formEl.setAttribute('id', productName);
         let buttonEl = document.createElement('button');
         buttonEl.id = productName;
         buttonEl.textContent = 'Add to my Stuff!';
@@ -85,77 +153,32 @@ function renderItem(){
     }
 }
 
-let productLanding=document.getElementById('addForm');
+
+let productLanding=document.getElementById('itemCard');
 
 function addStuff (event){
     event.preventDefault();
     let product = event.target.id;
     let quantity = event.target.quantity;
-    let quantityTwo = 2;
-    console.log(product);
-    console.log(quantity.value);
+    if (quantity.value){
+    cart.addItem(product,quantity.value);
+    console.log(cart.items);
+    let cartCounter = document.getElementById('cartLink');
+    console.log(cartCounter);
+    cartCounter.innerHTML = '';
+    cartCounter.textContent = 'Your Stuff'
+    let pEl = document.createElement('p');
+    pEl.textContent = cart.items.length;
+    cartCounter.appendChild(pEl);
+    }
+
 }
 
 productLanding.addEventListener('submit', addStuff);
 
 
-
 // creates cart items
 // NEEDS TO BE TESTED
-function CartItem (product,quantity){
-    for (let i = 0; i<allProducts.length; i ++){
-        if(product === allProducts[i].productName){
-            this.productName =allProducts[i].productName;
-        }
-        else{
-            console.log('hey you got problems creating CartItems');
-        }
-    }
-    this.quantity = quantity;
-}
-
-
-// creates Cart
-// NEEDS TO BE TESTED
-const Cart = function(items){
-    this.items = items;
-}
-
-//add function to add an item to cart
-// NEEDS TO BE TESTED
-Cart.prototype.addItem = function(product,quantity){
-    let item = new CartItem(product,quantity);
-    this.items.push(item);
-
-}
-
-//add function to remove item from cart 
-// NEEDS TO BE TESTED
-Cart.prototype.removeItem = function(product,quantity){
-    let modifiedCart = [];
-    for(let i =0; i<this.items.length; i++){
-        if (product === this.items[i].product && quantity ===this.items[i].quantity){
-            continue;
-        }
-        else{
-            modifiedCart.push(this.items[i]);
-        }
-    }
-
-
-}
-
-//storing cart in local storage
-Cart.prototype.storeCart = function(){
-let storedCart = JSON.stringify(this.items);
-localStorage.setItem('cart',storedCart);
-}
-
-//retrieving cart from local storage
-Cart.prototype.retreiveCart = function(){
-    let retreivedCart = JSON.parse(localStorage.getItem('cart'));
-    let cart = new Cart(retreivedCart);
-}
 
 
 
@@ -236,18 +259,18 @@ let merchantSelect = document.getElementById('THE DROP DOWN SELECTION ON THE MER
 
 
 
-//targets form for creating new merchants
-let merchantFormInput = document.getElementById('FORM TO CREATE MERCHANTS');
+// //targets form for creating new merchants
+// let merchantFormInput = document.getElementById('FORM TO CREATE MERCHANTS');
 
-//gathers data to create new company
-// NEEDS TO BE TESTED
-function merchantFormHandler(event){
-    event.preventDefualt();
-    let {companyName, email} = event.target
-    console.log(companyName.value);
-    console.log(email.value);
-    new Merchants(companyName.value,email.value);
-}
+// //gathers data to create new company
+// // NEEDS TO BE TESTED
+// function merchantFormHandler(event){
+//     event.preventDefualt();
+//     let {companyName, email} = event.target
+//     console.log(companyName.value);
+//     console.log(email.value);
+//     new Merchants(companyName.value,email.value);
+// }
 
-//adds eventlistener to the form for new merchant
-merchantFormInput.addEventListener('submit',merchantFormHandler);
+// //adds eventlistener to the form for new merchant
+// merchantFormInput.addEventListener('submit',merchantFormHandler);
