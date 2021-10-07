@@ -67,7 +67,7 @@ li p{
     background-color: transparent;
 }
 
-li:hover{
+.navItems li:hover{
     color:teal;
     background-color: transparent;
     font-size: 200%;
@@ -81,7 +81,124 @@ li:hover{
     background-color: darkkhaki;
     color: black;
     box-shadow: 5px 5px mediumblue;
-    
+
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+h3 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+#feat {
+    box-shadow: 20px 20px 10px 5px rgb(194, 183, 81);
+    padding: 20px;
+    border-radius: 40px;
+}
+
+.featured li {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(33, 33, 99);
+    list-style: none;
+    text-decoration: none;
+}
+  
+section {
+    background-color:aliceblue;
+    font-family: 'Bebas Neue', cursive;
+}
+  
+section.ct-u-paddingBoth80 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+  
+.ct-u-paddingTop20 {
+    padding-top: 20px;
+}
+  
+.ct-u-size40 {
+    font-size: 40px;
+}
+  
+.ct-section_header--type2 small {
+    color: rgb(19, 63, 184);
+    font-family: 'Lobster', cursive;
+    font-size: 58px;
+    line-height: .7;
+    display: block;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 7px;
+}
+  
+.ct-section_header--type2 span {
+    font-family: 'Bebas Neue';
+    font-size: 115px;
+    line-height: 0.8;
+}
+  
+.tags {
+    color: rgb(22, 8, 218);
+    line-height: 0.8;
+    margin: auto;
+}
+  
+.imgContainer {
+    background-size: 85%;
+    border-radius: 50px;
+    padding: 10px;
+}
+  
+.btn.btn-red {
+    color: #fff;
+    background-color: rgb(194, 183, 81);;
+    transition: transform 0.2s;
+    position: relative;
+    display: inline-block;
+}
+
+.btn-red:hover {
+    background-color:rgb(19, 63, 184);
+    transform: scale(2.2);
+    color: gold;
+}
+  
+.created-by {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-left: 0%;
+    margin-right: 0%;
+    justify-content: center;}
+  
+.ct-u-marginTop60 {
+    margin-top: 60px;
+
+}
+  
+
+.imgContainer img {
+    border: 14px solid #Fafafa;
+    box-shadow: 10px 10px 10px 5px mediumblue;
+    height: 500px;
+    width: 500px;
+    border-radius: 30px;
+}
+
+.text {
+    max-width: 400px;
+}
+
+.prettyLine {
+    border: 10px solid darkkhaki;
+    border-radius: 5px;
 }
 
 #itemCard {
@@ -157,7 +274,7 @@ button:hover {
     padding-left: 10px;
     margin: 20px;
 
-}
+}  
 
 #footer {
     display: flex;
@@ -174,3 +291,4 @@ button:hover {
     background-size: cover;
     color: rgb(9, 17, 26);
 }
+  
