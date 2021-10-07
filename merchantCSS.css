@@ -80,3 +80,8 @@ th {
     border-style: double;
     border-color: darkblue;
 }
+#search-form {
+    background-color: #055C9D;
+    color: white;
+    font-weight: bold;
+}

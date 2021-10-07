@@ -1,12 +1,32 @@
 'use strict';
 
 //==================================================
-/*let workingArray = allProducts;
-document.getElementById("search-form").addEventListener("submit",onSearch);
+let workingArray = allProducts;
+let searchArray = [];
 let onSearch = function(event) {
+    event.preventDefault();
     let form = event.target;
-    let searchField = event.target.searchField.value;
-}*/
+    let searchField = document.getElementById("field-dropdown").value;
+    let searchValue = form.searchValue.value;
+    console.log(searchField + ": " + searchValue);
+    for(let i = 0; i < allProducts.length; i++) {
+        if(allProducts[i][searchField] == searchValue){
+            searchArray.push(allProducts[i]);
+        }
+    }
+    console.log(searchArray);
+    renderSearchResults();
+}
+document.getElementById("search-form").addEventListener("submit",onSearch);
+
+
+let resetOnClick = function(event) {
+    renderTable();
+    searchArray=[];
+}
+document.getElementById("reset-button").addEventListener("click",resetOnClick);
+
+
 //==================================================
 let checkLocalProducts = function() {
     if(localStorage.getItem("productList")){
@@ -35,17 +55,6 @@ const removeProductByName = function(productName) {
         allProducts.pop();
     }
     //===============================================
-
-    /*if(hasProduct(productName)){
-        let removeIndex;
-        for(let i = 0; i  < allProducts.length;i++) {
-            if(allProducts[i].productName === productName){
-                removeIndex = i;
-            }
-        }
-        allProducts[removeIndex] = allProducts[allProducts.length - 1];
-        allProducts.pop();
-    }*/
 }
 //========================================================
 const getItemIndexByName = function(productName) {
@@ -72,6 +81,7 @@ let productSubmit = function(event) {
     let details = newProduct.details.value;
     let invQTY = newProduct.inventoryQuantity.value;
     newProduct = new Products(name,url,price,details,invQTY);
+    console.log(newProduct);
     renderTable();
     return newProduct;
 }
@@ -91,7 +101,6 @@ const removeButtonOnClick = function(event) {
 
 //needs to account for what merchant is calling
 const addToTable = function(productsObject) {
-    console.log("adding to table");
     //create row
     let tr = document.createElement("tr");
     tr.setAttribute("id", productsObject.productName);
@@ -116,12 +125,7 @@ const addToTable = function(productsObject) {
     tr.appendChild(td);
     //=========================================
     //create column for remove item button
-    td = document.createElement('td');/*
-    let a = document.createElement('a');
-    a.innerHTML = "Remove Item";
-    a.setAttribute("href","#");
-    a.addEventListener("click",removeButtonOnClick);
-    td.appendChild(a);*/
+    td = document.createElement('td');
     
     let removeBtn = document.createElement("button");
     removeBtn.innerHTML = "Remove Item";
@@ -175,10 +179,18 @@ let renderTable = function() {
     console.log("renderTable");
     document.querySelector('tbody').innerHTML = "";
     for(let i = 0; i < allProducts.length; i++) {
-        console.log(i);
         addToTable(allProducts[i]);
     }
     saveItems();
+}
+
+let renderSearchResults = function() {
+    console.log("searchTable");
+    document.querySelector('tbody').innerHTML = "";
+    for(let i = 0; i < searchArray.length; i++) {
+        addToTable(searchArray[i]);
+    }
+    //saveItems();
 }
 
 renderTable();
@@ -188,14 +200,8 @@ renderTable();
 
 //==================================================
 
-let onSearchSubmit = function() {
-
-}
 
 //===================================================
 
-/*
-let removeButton = document.querySelector("td a");
-removeButton.addEventListener("click",removeButtonOnClick);*/
 
 
