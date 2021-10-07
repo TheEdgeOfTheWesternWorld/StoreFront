@@ -40,7 +40,7 @@ Normal mode operation:
 In REMO for 9-6pm
 Backup will be zoom
 
-K’lan: 9pm
+K’Lan: 9pm
 Joey: Insomniac 
 Andrew: Over Slack
 Sam: 10 pm
@@ -85,7 +85,7 @@ Sam: 10 pm
 #### The team then splits the separate pages html between Joey, Andrew, and K'lan. Sam started on some basic JavaSript.
   - Joey selectes a [color palette](https://www.canva.com/colors/color-palettes/bright-lights/) for the project
   - Joey creates the HTML and CSS for the index page
-  - K'lan creates the HTML and CSS for the cart page
+  - K'Lan creates the HTML and CSS for the cart page
   - Andrew creates the HTML and Css for the merchant page
   - Sam creates basic constructor functions that are identified in the [problem domain](/assets/storefront2.png)
 
@@ -103,9 +103,27 @@ Sam: 10 pm
 
 #### Team focus changes to JavaScript and making a MVP
 - Andrew works on the table on the merchant page
-- K'lan works on setting up the JavaScript for the checkout page table
+- K'Lan works on setting up the JavaScript for the checkout page table
 - Joey and Sam work on rendering the items Andrew adds to the total products
 - Sam updated the problem domain
 ![problem Domain](/assets/storefrontupdate.png);
+
+## Day 3:
+- Team Alpha Wolf Squadron makes their acquaintance know at 9:00am
+
+#### Teams projects:
+- Andrew works on functionality of the table and adds search function
+- K'Lan adds remove funtion to cart along with totals for both total cost and specific item line cost
+- Joey adds password protection link to  merchant page (password: alphasquad)
+- Sam updates README and helps other members of the team
+- Team comes to concensus on reaching MVP
+
+## Day 4:
+- Team Alpha Wolf Squadron arrives to REMO at 9:00am
+
+#### Team Projects:
+- Joey works on the feature page. Uses code from  Source: SoloDev, Author: Paris Tuzun.
+- Andrew addresses some undefined variables
+- K'Lan adds ability to change quantity ordered with in the cart
 
 
