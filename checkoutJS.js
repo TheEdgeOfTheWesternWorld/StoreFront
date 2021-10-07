@@ -40,9 +40,8 @@ function showCart()
     let deleteButton = document.createElement('td');
     
     let trashIcon = document.createElement('img');
-    trashIcon.src = "assets/trash-icon.jpg";
+    trashIcon.src = "assets/trash-icon.png";
     trashIcon.setAttribute('id', i);
-    trashIcon.setAttribute
     trashIcon.classList.add('remover');
 
     deleteButton.appendChild(trashIcon);
@@ -67,6 +66,7 @@ function showCart()
       }
     }
     
+    let picTD = document.createElement('td');
     let pictureData = document.createElement('img');
     pictureData.setAttribute('id', 'product');
     console.log(cart.items[0].productName);
@@ -76,8 +76,9 @@ function showCart()
         break;
       }
     }
-      
-    tableRow.appendChild(pictureData);
+    
+    picTD.appendChild(pictureData);
+    tableRow.appendChild(picTD);
     tableRow.appendChild(itemData);
     tableRow.appendChild(quantityData);
     tableRow.appendChild(priceData);
@@ -90,11 +91,22 @@ function showCart()
 
 function priceTotal()
 {
-  let parentEl = document.querySelector('tbody');
+  let parentEl = document.querySelector('tfoot');
+  parentEl.innerText = '';
   let rowEl = document.createElement('tr');
-  
+
+  let totalEl = document.createElement('td');
+  totalEl.innerText = 'Total Price:';
+
+  let blankEl = document.createElement('td');
+  let blankEl2 = document.createElement('td');
+
   let dataEl = document.createElement('td');
-  dataEl.innerText  = totalPrice;
+  dataEl.innerText  = '$' + totalPrice;
+
+  rowEl.appendChild(totalEl);
+  rowEl.appendChild(blankEl);
+  rowEl.appendChild(blankEl2);
   rowEl.appendChild(dataEl);
   parentEl.appendChild(rowEl);
   
