@@ -208,7 +208,7 @@ function password() {
     var pass1 = prompt('Give Me The Password - Don\'t Mess it Up Neither!');
     while (testV < 3){
         if(!pass1);
-        history.go(-1);
+        // history.go(-1); <---This is buggy as heck!
         if(pass1.toLocaleLowerCase() == "alphasquad"){
         alert('You Have Been Found Worthy - Please Enter');
         window.open('merchantPage.html','_self');
