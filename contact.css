@@ -1,0 +1,147 @@
+body {
+    padding: 0;
+    margin: auto;
+}
+header {    
+    background-image: url(https://www.seaciti.org/2021/wp-content/uploads/2020/03/covid_header-1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    padding: 5px; 
+}
+
+header h1 {
+    color:antiquewhite;
+    font-family: 'Zen Dots', cursive;
+    font-size: xx-large;
+    font-size: 50px;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 6px 6px mediumblue;
+    letter-spacing: 5px;
+    
+}
+
+header h6 {
+    color:rgb(19, 63, 184);
+    font-family: 'Zen Dots', cursive;
+    font-size: medium;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 5px;
+    background-color: rgb(194, 183, 81);
+    border-radius: 10px;
+    width: 100%;
+
+}
+.navThings {
+    color:antiquewhite;
+    text-align: center;
+}
+
+.navThings li {
+    list-style: none;
+    font-family: 'Bebas Neue', cursive;
+    font-size: large;
+    display: inline-block;
+    justify-content: space-between;
+    padding: 30px;
+    transition: transform .2s;
+}
+
+li p{
+    display: inline;
+}
+
+.navThings a{
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+    color:antiquewhite;
+}
+
+.navThings a:hover{
+    color:teal;
+    background-color: transparent;
+}
+
+li:hover{
+    color:teal;
+    background-color: transparent;
+    font-size: 200%;
+    transform: scale(2.0);
+}
+
+#homeBtn {
+    border-radius: 20px;
+    padding: 10px;
+    transition: transform .2s;
+    width: 125px;
+    background-color: darkkhaki;
+    box-shadow: 5px 5px mediumblue;
+}
+
+#homeBtn a {
+    color: black;
+
+}
+#homeBtn:hover {
+    font-size: large;
+    font-size: 120%;
+    transform: scale(1.25);
+}
+h2 {
+    background-color: lightblue;
+}
+
+.contactClass {
+    font-family: -apple-system, Arial, sans-serif;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #0000ff;
+    text-align: left;
+}
+.contactClass #contactUs {
+    padding: 10px
+}
+.emailGroup {
+    padding: 10px;
+}
+#contactFooter {
+    display: flex;
+    letter-spacing: 5px;
+    width: 100%;
+    padding: 30px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: large;
+    justify-content: center;
+    border-style: inset;
+    border-color: darkblue;
+    background-color: rgb(49, 80, 173);
+    background-size: cover;
+    color: rgb(9, 17, 26);
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+input[type=submit] {
+    background-color: #5DADE2;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+  }
+
+
+

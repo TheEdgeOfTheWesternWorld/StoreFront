@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Zen+Dots&display=swap" rel="stylesheet">
+    <title>Contact The Boys</title>
+</head>
+<body>
+    <header>
+        <h1>Capitalism Incorporated</h1>
+        <h6>A Better Way To Buy The Stuff You Want</h6>
+    <nav class="navThings">
+        <ul>
+            <li id="aboutLink">
+                <a id="link" href="About Us Page">About Us</a>
+            </li>
+            <li id = 'cartLink'>
+                <a href =checkout.html>Your Stuff</a>
+            </li>
+        </ul>
+        <button id="homeBtn"><a href="index.html">Home</a></button>
+    </nav>
+    </header>
+
+    <h2>Contact Us About Our Capitalist Ways</h2>
+    <form id="contactUs" class="contactClass" method="post" action="contact-form-process.php">
+            <label for="Name" class="nombre">Your name</label>
+            <div class="input-group">
+                <input type="text" id="Name" name="Name" class="contactControl" required>
+            </div>
+        <div class="emailGroup">
+            <label for="Email" class="email-label">Your email address</label>
+            <div class="input-group">
+                <input type="email" id="Email" name="Email" class="contactControl" required>
+            </div>
+            <label for="contactReason">Contact Reason</label>
+            <select id="contactReason" name="contactReason">
+                <option value="sales">Sales</option>
+                <option value="help">Help</option>
+                <option value="returns">Returns</option>
+            </select>
+        <div class="messageGroup">
+            <label for="Message" class="messageLabel">Say Something</label>
+            <div class="input-group">
+                <textarea id="Message" name="Message" class="contactControl" rows="6" maxlength="3000" required></textarea>
+            </div>
+        </div>
+        <div class="input-group">
+            <button type="submit" id="contactButton" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Full Send</button>
+        </div>
+        <footer id="contactFooter">&copy Capitalism Incorporated Co. 2021, All Rights Reserved</footer>
+</body>
+</html>
