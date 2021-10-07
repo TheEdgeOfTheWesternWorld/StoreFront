@@ -105,5 +105,7 @@ Sam: 10 pm
 - Andrew works on the table on the merchant page
 - K'lan works on setting up the JavaScript for the checkout page table
 - Joey and Sam work on rendering the items Andrew adds to the total products
+- Sam updated the problem domain
+![problem Domain](/assets/storefrontupdate.png);
 
 
