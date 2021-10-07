@@ -8,6 +8,10 @@ header
     width: 100%;
     padding: 30px;
 }
+body
+{
+    background-color: rgba(150, 205, 236, 0.671);
+}
 
 header h1 
 {
@@ -54,8 +58,8 @@ h2
 .cart-container
 {
     float: left;
-    margin-right: 50px;
-    margin-left: 30px;
+    margin-right: 60px;
+    margin-left: 50px;
     margin-top: 25px;
     background-color: rgb(230, 230, 230);
     box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
@@ -99,6 +103,17 @@ table td
     border-radius: 5px;
 }
 
+#quantityInput
+{
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Bebas Neue', cursive;
+    background-color: rgba(204, 203, 203, 0.733);
+}
+
 .remover
 {
     height: 20px;
@@ -110,7 +125,8 @@ table td
 .remover:hover
 {
     transition: ease-in-out 0.25s;
-    transform: scale(1.5);
+    transform: scale(1.25);
+    background-color: #f35151;
 }
 
 td:last-child
@@ -177,9 +193,9 @@ main
 form
 {
     margin-top: 25px;
-    width: 100%;
+    width: 500px;
     border-radius: 5px;
-    margin-bottom: 150px;
+    margin-bottom: 30px;
     padding: 15px 0px 15px 15px;
     text-align: justify;
     display: flex;
@@ -238,4 +254,90 @@ label
     padding: 5px;
 }
 
+.reviewSection
+{
+    float: left;
+    margin-right: 50px;
+    margin-left: 60px;
+    margin-top: 25px;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    width: 600px;
+    border: none;
 
+}
+
+#reviewTitle
+{
+    background: #343a40
+}
+
+h3
+{
+    font-size: 2em;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    color: white;
+    background-color: #343a40;
+    padding: 10px;
+}
+
+#reviews
+{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 830px;
+}
+
+#review1
+{
+    height: 150px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid black;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#review2
+{
+    height: 150px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid black;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#review3
+{
+    height: 150px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid black;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#review4
+{
+    height: 150px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid black;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#review5
+{
+    height: 150px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid black;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
