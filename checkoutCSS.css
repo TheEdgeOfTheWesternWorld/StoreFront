@@ -74,10 +74,59 @@ h2
     padding: 15px;
 }
 
+#subQuant
+{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30px;
+    color: rgb(255, 0, 0);
+    background-color: #f0c0c0;
+    border: hidden;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#subQuant:hover
+{
+    transition: ease-in-out 0.25s;
+    transform: scale(1.25);
+    background-color: #f89090;
+}
+
+#addQuant
+{
+    margin-left: 10px;
+    width: 30px;
+    color: rgb(0, 4, 255);
+    background-color: rgb(165, 167, 255);
+    border: hidden;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#addQuant:hover
+{
+    transition: ease-in-out 0.25s;
+    transform: scale(1.25);
+    background-color: rgb(121, 123, 255);
+}
+
+#quantTD
+{
+    justify-content: center;
+    display: inline-flex;
+}
+
 tr 
 {
     font-family: 'Bebas Neue', cursive;
     font-size: 1.5em;
+}
+
+#productName
+{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 0.85em;
 }
 
 tr #cart-row
@@ -114,7 +163,7 @@ table td
     background-color: rgba(204, 203, 203, 0.733);
 }
 
-.remover
+#remover
 {
     height: 20px;
     padding: 4px;
@@ -122,7 +171,7 @@ table td
     border-radius: 5px;
 }
 
-.remover:hover
+#remover:hover
 {
     transition: ease-in-out 0.25s;
     transform: scale(1.25);
@@ -187,7 +236,9 @@ li:hover{
 main 
 {
     display: flex;
+    width: 100%;
     align-items: flex-start;
+    justify-content: center;
 }
 
 form
@@ -275,9 +326,9 @@ label
     background: #343a40
 }
 
-h3
+h3, h4
 {
-    font-size: 2em;
+    font-size: 1.2em;
     font-family: 'Bebas Neue', cursive;
     text-align: center;
     color: white;
@@ -340,4 +391,18 @@ h3
     border: 1px solid black;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+#reviewInput
+{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#reviewws
+{
+    margin-right: 5px;
+    margin-bottom: 5px;
+    float: right;
 }

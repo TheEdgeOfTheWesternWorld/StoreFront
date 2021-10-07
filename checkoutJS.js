@@ -14,12 +14,11 @@ let totalPrice = 0;
 function loadCart() 
 {
   const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-  // console.log(cartItems);
   cart = new Cart(cartItems);
-  // console.log(cart);
 }
+
 loadCart();
-// console.log(cart);
+
 function renderCart() 
 {
   loadCart();
@@ -45,6 +44,7 @@ function showCart()
     let itemData = document.createElement('td');
     itemData.innerText = cart.items[i].productName;
     itemData.setAttribute('class', cart.items[i].productName);
+    itemData.setAttribute('id', 'productName');
       
     let deleteButton = document.createElement('td');
     
@@ -65,7 +65,9 @@ function showCart()
     subBtn.setAttribute('id', 'subQuant');
     subBtn.classList.add(i);
 
-    let quantityData = document.createElement('td');
+    let quantityTD = document.createElement('td');
+    quantityTD.setAttribute('id', 'quantTD');
+    let quantityData = document.createElement('p');
     quantityData.innerText = cart.items[i].quantity; 
     
     let priceData = document.createElement('td');
@@ -95,12 +97,13 @@ function showCart()
     }
     
     picTD.appendChild(pictureData);
-    quantityData.appendChild(subBtn);
-    quantityData.appendChild(addBtn);
+    quantityTD.appendChild(subBtn);
+    quantityTD.appendChild(quantityData);
+    quantityTD.appendChild(addBtn);
     
     tableRow.appendChild(picTD);
     tableRow.appendChild(itemData);
-    tableRow.appendChild(quantityData);
+    tableRow.appendChild(quantityTD);
     tableRow.appendChild(priceData);
     tableRow.appendChild(deleteButton);
     
