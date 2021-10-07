@@ -6,9 +6,12 @@ allProducts =[];
 //creates product list
 function retrieveProducts(){
     let parsedProducts = JSON.parse(localStorage.getItem('productList'));
-    for( let i = 0; i<parsedProducts.length; i++){
-        let newProduct = parsedProducts[i]
-        new Products(newProduct.productName,newProduct.productImage,newProduct.productPrice,newProduct.productQuantity);
+    if (parsedProducts)
+    {
+        for( let i = 0; i<parsedProducts.length; i++){
+            let newProduct = parsedProducts[i]
+            new Products(newProduct.productName,newProduct.productImage,newProduct.productPrice,newProduct.productDeets,newProduct.productQuantity);
+        }
     }
 }
 

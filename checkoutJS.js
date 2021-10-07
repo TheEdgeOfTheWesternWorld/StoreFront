@@ -1,5 +1,10 @@
 'use strict';
 
+const sub = document.getElementById('cart');
+sub.addEventListener('click', subQuantity);
+
+const add = document.getElementById('cart');
+add.addEventListener('click', addQuantity);
 
 const table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
@@ -34,11 +39,6 @@ function showCart()
   let clearTable = document.querySelector('tbody');
   
   for(let i = 0; i < cart.items.length; i++){
-    // const sub = document.getElementById('cart');
-    // sub.addEventListener('click', subQuantity);
-    
-    // const add = document.getElementById('cart');
-    // add.addEventListener('click', addQuantity);
 
     let tableRow = document.createElement('tr');
 
@@ -50,20 +50,20 @@ function showCart()
     
     let trashIcon = document.createElement('img');
     trashIcon.src = "assets/trash-icon.png";
-    trashIcon.setAttribute('id', i);
-    trashIcon.classList.add('remover');
+    trashIcon.setAttribute('id', 'remover');
+    trashIcon.classList.add(i);
 
     deleteButton.appendChild(trashIcon);
     
-    // let addBtn = document.createElement('button');
-    // addBtn.innerText = '+';
-    // addBtn.setAttribute('id', i);
-    // addBtn.classList.add('addQuant');
+    let addBtn = document.createElement('button');
+    addBtn.innerText = '+';
+    addBtn.setAttribute('id', 'addQuant');
+    addBtn.classList.add(i);
 
-    // let subBtn = document.createElement('button');
-    // subBtn.innerText = '-';
-    // subBtn.setAttribute('id', i);
-    // subBtn.classList.add('subQuant');
+    let subBtn = document.createElement('button');
+    subBtn.innerText = '-';
+    subBtn.setAttribute('id', 'subQuant');
+    subBtn.classList.add(i);
 
     let quantityData = document.createElement('td');
     quantityData.innerText = cart.items[i].quantity; 
@@ -78,8 +78,8 @@ function showCart()
         let orderPrice = productPrice * cart.items[i].quantity;
         priceData.innerText = '$' + orderPrice;
         totalPrice = totalPrice + orderPrice;
-        // console.log(totalPrice);
-        // console.log(orderPrice);
+        console.log('totalprice ' + totalPrice);
+        console.log('orderprice ' + orderPrice);
         break;
       }
     }
@@ -94,51 +94,9 @@ function showCart()
       }
     }
     
-    
-    // function subQuantity(event)
-    // {
-    //   let sub = event.target.classList.contains('subQuant');
-    //   console.log('Sub is ' + sub);
-    //   let subQuant = cart.items[i].quantity;
-    //   console.log(subQuant);
-
-    //   for(let subQty = 0; subQty < subQuant; subQty--)
-    //   {
-    //     if(sub)
-    //     {
-    //       subQuant--;
-    //       quantityData.innerText = subQuant;
-    //       console.log(quantityData);
-    //       cart.storeCart();
-    //       sub = false;
-    //     }
-    //     break;
-    //   }
-    // }
-    
-    // function addQuantity(event)
-    // {
-    //   let add = event.target.classList.contains('addQuant');
-    //   console.log('Add is ' + add);
-    //   let addQuant = cart.items[i].quantity;
-      
-    //   for(let addQty = 0; addQty < addQuant; addQty--)
-    //   {
-    //     if(add)
-    //     {
-    //       addQuant++;
-    //       quantityData.innerText = addQuant;
-    //       console.log(quantityData);
-    //       cart.storeCart();
-    //     }
-    //     break;
-    //   }
-    // }
-    
-
     picTD.appendChild(pictureData);
-    // quantityData.appendChild(subBtn);
-    // quantityData.appendChild(addBtn);
+    quantityData.appendChild(subBtn);
+    quantityData.appendChild(addBtn);
     
     tableRow.appendChild(picTD);
     tableRow.appendChild(itemData);
@@ -150,10 +108,63 @@ function showCart()
   }
 }
 
+function subQuantity(event)
+{
+  if(event.target.id === 'subQuant')
+  {
+    let index = parseInt(event.target.className);
+    let subProduct = cart.items[index].productName;
+    let subQuant = parseInt(cart.items[index].quantity);
+    let round1 = true;
+  
+    for(let subQty = 0; subQty < cart.items.length; subQty++)
+    {
+      if(subProduct === cart.items[subQty].productName && subQuant == cart.items[subQty].quantity && round1 === true)
+      {
+        if(cart.items[subQty].quantity > 0)
+        {
+          cart.items[subQty].quantity = cart.items[subQty].quantity - 1;
+
+          cart.storeCart();
+          round1 = false;
+          totalPrice = 0;
+          renderCart();
+          priceTotal();
+          break;
+        }
+      }
+    }
+  }
+}
+
+function addQuantity(event)
+{
+  if(event.target.id === 'addQuant')
+  {
+    let addProduct = cart.items[parseInt(event.target.className)].productName;
+    let addQuant = cart.items[parseInt(event.target.className)].quantity;
+    let round1 = true;
+  
+    for(let addQty = 0; addQty < cart.items.length; addQty++)
+    {
+      if(addProduct === cart.items[addQty].productName && addQuant == cart.items[addQty].quantity && round1 === true)
+      {
+        cart.items[addQty].quantity = parseInt(cart.items[addQty].quantity) + 1;
+        cart.storeCart();
+        round1 =false;
+        totalPrice = 0;
+        renderCart();
+        priceTotal();
+        break;
+      }
+    }
+  }
+}
+
 function priceTotal()
 {
   let parentEl = document.querySelector('tfoot');
-  parentEl.innerText = '';
+  parentEl.innerHTML = '';
   let rowEl = document.createElement('tr');
   
   let totalEl = document.createElement('td');
@@ -173,24 +184,26 @@ function priceTotal()
   
 }
 
-
 function removeItemFromCart(event) 
 {
-  let table = event.target.classList.contains('remover');
-  let proDuct = cart.items[parseInt(event.target.id)].productName;
-  let quant = cart.items[parseInt(event.target.id)].quantity;
-  // console.log(proDuct, quant);
-  
-  if (table)
+  if(event.target.id === 'remover')
   {
-    cart.removeItem(proDuct, quant);
-    console.log(cart.items);
-    totalPrice = 0;
-    cart.storeCart();
+    console.log('works');
+    let proDuct = cart.items[parseInt(event.target.className)].productName;
+    let quant = cart.items[parseInt(event.target.className)].quantity;
+    // console.log(proDuct, quant);
+    
+    if (table)
+    {
+      cart.removeItem(proDuct, quant);
+      console.log(cart.items);
+      totalPrice = 0;
+      cart.storeCart();
+    }
+    
+    renderCart();
+    priceTotal();
   }
-  
-  renderCart();
-  priceTotal();
 }
 
 renderCart();
