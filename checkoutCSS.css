@@ -9,28 +9,53 @@ header
     padding: 30px;
 }
 
-h1
+header h1 
 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2em;
     color:antiquewhite;
+    font-family: 'Zen Dots', cursive;
+    font-size: xx-large;
+    font-size: 50px;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 6px 6px mediumblue;
+    letter-spacing: 10px;
+    
+}
+
+header h6 
+{
+    color:rgb(19, 63, 184);
+    font-family: 'Zen Dots', cursive;
+    font-size: medium;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 5px;
+    background-color: rgb(194, 183, 81);
+    border-radius: 10px;
+    width: 100%;
+
+}
+
+#cartTitle-container
+{
+    background: #343a40;
 }
 
 h2
 {
-    font-size: 1.5em;
+    font-size: 2em;
     font-family: 'Bebas Neue', cursive;
-    text-decoration: underline;
+    text-align: center;
+    color: white;
+    background-color: #343a40;
+    padding: 10px;
 }
 
 .cart-container
 {
     float: left;
-    /* width: 950px; */
     margin-right: 50px;
     margin-left: 30px;
-    /* margin-bottom: 150px; */
-    padding: 15px;
     margin-top: 25px;
     background-color: rgb(230, 230, 230);
     box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
@@ -40,11 +65,15 @@ h2
     border: none;
 }
 
+#cart 
+{
+    padding: 15px;
+}
+
 tr 
 {
     font-family: 'Bebas Neue', cursive;
     font-size: 1.5em;
-    border-bottom: 1px solid black;
 }
 
 tr #cart-row
@@ -52,12 +81,6 @@ tr #cart-row
     display: flex;
     justify-content: space-between;
     vertical-align: middle;
-}
-
-tr #cart-header 
-{
-    vertical-align: bottom;
-    border-bottom: 2px solid black;
 }
 
 table td
@@ -78,8 +101,16 @@ table td
 
 .remover
 {
-    max-width: 100%;
-    height: 35px;
+    height: 20px;
+    padding: 4px;
+    background-color: #f0c0c0;
+    border-radius: 5px;
+}
+
+.remover:hover
+{
+    transition: ease-in-out 0.25s;
+    transform: scale(1.5);
 }
 
 td:last-child
@@ -92,7 +123,6 @@ td:last-child
 {
     color:antiquewhite;
     text-align: center;
-    position: relative;
 }
 
 .navItems li 
@@ -101,9 +131,32 @@ td:last-child
     font-family: 'Bebas Neue', cursive;
     font-size: 2em;
     display: inline-block;
+    margin-left: 50px;
     justify-content: space-between;
     padding: 30px;
+    transition: transform .2s;
+}
 
+li p{
+    display: inline;
+}
+
+.navItems a{
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+    color:antiquewhite;
+}
+
+.navItems a:hover{
+    color:teal;
+    background-color: transparent;
+}
+
+li:hover{
+    color:teal;
+    background-color: transparent;
+    font-size: 200%;
+    transform: scale(2.0);
 }
 
 .navItems button 
@@ -124,7 +177,7 @@ main
 form
 {
     margin-top: 25px;
-    width: 600px;
+    width: 100%;
     border-radius: 5px;
     margin-bottom: 150px;
     padding: 15px 0px 15px 15px;
@@ -135,33 +188,54 @@ form
     box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
 }
 
+#submit-button 
+{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5em;
+    display: block;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    margin-top: 15px;
+    float: right;
+}
+
 label
 {
     font-family: 'Bebas Neue', cursive;
     font-size: 2em;
+    line-height: 1;
     display: block;
-    padding-bottom: 1px;
-    padding-top: 1px;
+    padding-top: 5px;
+    padding-left:5px;
+    margin-top: 10px;
 }
 
 #footer 
 {
-    font-family: 'Bebas Neue', cursive;
-    position: fixed;
-    bottom: 0;
-    text-align: center;
-    font-size: 2em;
+    display: flex;
+    letter-spacing: 5px;
+    justify-content: center;
+    margin: 0;
     width: 100%;
-    height: 60px;
-    padding-top: 40px;
-    background-color: #0E86D4;
+    padding: 30px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: large;
+    border-style: inset;
+    border-color: darkblue;
+    background-color: rgb(49, 80, 173);
+    background-size: cover;
+    color: rgb(9, 17, 26);
 }
 
 
 .textbox
 {
     width: 450px;
-    height: 30px;
+    height: 20px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5em;
+    line-height: 1;
+    padding: 5px;
 }
 
 
