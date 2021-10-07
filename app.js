@@ -98,10 +98,21 @@ Cart.prototype.retreiveCart = function(){
     let retreivedCart = JSON.parse(localStorage.getItem('cart'));
     let cart = new Cart(retreivedCart);
 }
+let cart;
+function createCart(){
+    if (localStorage.getItem('cart')){
+        let retreiveCart = JSON.parse(localStorage.getItem('cart'));
+        cart = new Cart(retreiveCart);
 
+    }
 
+    else {
+        cart = new Cart([]);
+    }
+}
 
-let cart = new Cart([]);
+createCart();
+
 console.log(cart);
     let testCar = new Products('Glory Days Letter Jacket','assets/jacket.jpg',250,'Did you almost get to start for the Homecoming game? You know you would have made that game-winning touchdown had the coach only seen your natural talent. Even passed on that full-ride because of that stupid kneee injury amiright? Well have no fear, we bring you the Glory Days Letter Jacket. You can smell the nastalgia!',4000);
     new Products('Lifesize Darth Vader', 'assets/vader.jpg',66,'He IS your Father, he IS the almighty Lord of the Sith himself. And NOW - for a limited time, you too can have your Daddy, Lord Vader, stand magestically wherever you need him to. Priced in honor of the order that changed the galaxy - order 66.',20);
@@ -190,9 +201,31 @@ function createCartCounter(cartLength){
     pEl.textContent = cartLength;
     cartCounter.appendChild(pEl);
 }
+var merchantAccess = document.getElementById("merchantAccess");
+            
+function password() {
+    var testV=1;
+    var pass1 = prompt('Give Me The Password - Don\'t Mess it Up Neither!');
+    while (testV < 3){
+        if(!pass1);
+        history.go(-1);
+        if(pass1.toLocaleLowerCase() == "alphasquad"){
+        alert('You Have Been Found Worthy - Please Enter');
+        window.open('merchantPage.html','_self');
+        break;
+        }
+        console.log(pass1);
 
+        testV+=1;
+        pass1 = prompt('NOPE! You Gotta Do Better Than That!');
+        }
+    if(pass1.toLocaleLowerCase()!=="alphasquad" & testV == 3){
+    alert ('Go Away!');
+    }
+    return 
+}
 
-
+merchantAccess.addEventListener("click", password);
 
 //contains all merchants that have products for sale
 allMerchants = [];
