@@ -30,8 +30,8 @@ document.getElementById("reset-button").addEventListener("click",resetOnClick);
 //==================================================
 let checkLocalProducts = function() {
     if(localStorage.getItem("productList")){
-        //allProducts = [];
-        //retrieveProducts()
+        allProducts = [];
+        retrieveProducts()
         console.log("reading");
     }
 }
