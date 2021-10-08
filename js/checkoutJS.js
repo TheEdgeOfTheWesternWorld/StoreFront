@@ -11,6 +11,8 @@ table.addEventListener('click', removeItemFromCart);
 
 let totalPrice = 0;
 
+retrieveProducts();
+
 function loadCart() 
 {
   const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -208,6 +210,28 @@ function removeItemFromCart(event)
     priceTotal();
   }
 }
+
+//adds reset and cart clear on submission of customer info
+let customerForm = document.getElementById('customerInfo')
+
+function customerFormHandler(event){
+  localStorage.removeItem('cart');
+}
+
+customerForm.addEventListener('submit',customerFormHandler);
+
+//adds review to reviews section
+let reviewInput = document.getElementById('reviewArea')
+
+function reviewInputHandler(event){
+  event.preventDefault();
+  console.log(event.target)
+  let review = event.target.value;
+  console.log(review);
+}
+
+
+reviewInput.addEventListener('submit',reviewInputHandler);
 
 renderCart();
 priceTotal();
