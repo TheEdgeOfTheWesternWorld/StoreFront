@@ -29,6 +29,8 @@ function Products(productName,productImage,productPrice,productDeets,productQuan
 
 }
 
+let testCar = new Products('Glory Days Letter Jacket','assets/jacket.jpg',250,'Relive that one time a long long time ago when High School was the pinnacle of your life. You can literally smell the nastalgia, no really, patent pending.',4000);
+
 // creates order Items
 function CartItem (product,quantity){
     console.log(product);
