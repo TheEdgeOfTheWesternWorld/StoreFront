@@ -25,6 +25,10 @@ header h1 {
     
 }
 
+h4{
+    width: ;
+}
+
 header h6 {
     color:rgb(19, 63, 184);
     font-family: 'Zen Dots', cursive;
@@ -128,7 +132,7 @@ section.ct-u-paddingBoth80 {
 .ct-u-size40 {
     font-size: 40px;
 }
-  
+
 .ct-section_header--type2 small {
     color: rgb(19, 63, 184);
     font-family: 'Lobster', cursive;
@@ -202,7 +206,7 @@ section.ct-u-paddingBoth80 {
 }
 
 #itemCard {
-    width: 100%;
+    width:100%;
     margin-left: 0;
     margin-right: 0;
     display: flex;
@@ -226,7 +230,13 @@ section.ct-u-paddingBoth80 {
     color: rgb(209, 219, 245);
 }
 
-#itemCard h4 {
+#itemCard p {
+    width: 400px;
+    height: auto;
+    word-wrap:break-word;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
     text-align: left;
     font-family: 'Bebas Neue', cursive;
     font-size: larger;
