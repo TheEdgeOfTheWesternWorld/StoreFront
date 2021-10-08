@@ -68,8 +68,10 @@ function showCart()
     subBtn.classList.add(i);
 
     let quantityTD = document.createElement('td');
-    quantityTD.setAttribute('id', 'quantTD');
+    quantityTD.setAttribute('class','quantTD');
     let quantityData = document.createElement('p');
+    let quantTD = 'quantity ' + i;
+    quantityData.id = quantTD;
     quantityData.innerText = cart.items[i].quantity; 
     
     let priceData = document.createElement('td');
@@ -113,6 +115,7 @@ function showCart()
   }
 }
 
+
 function subQuantity(event)
 {
   if(event.target.id === 'subQuant')
@@ -120,25 +123,15 @@ function subQuantity(event)
     let index = parseInt(event.target.className);
     let subProduct = cart.items[index].productName;
     let subQuant = parseInt(cart.items[index].quantity);
-    let round1 = true;
-  
-    for(let subQty = 0; subQty < cart.items.length; subQty++)
-    {
-      if(subProduct === cart.items[subQty].productName && subQuant == cart.items[subQty].quantity && round1 === true)
-      {
-        if(cart.items[subQty].quantity > 0)
-        {
-          cart.items[subQty].quantity = cart.items[subQty].quantity - 1;
-
-          cart.storeCart();
-          round1 = false;
-          totalPrice = 0;
-          renderCart();
-          priceTotal();
-          break;
-        }
-      }
+    if(subQuant > 0){
+        cart.items[index].quantity = subQuant - 1;
+    cart.storeCart();
+    totalPrice = 0;
+    renderCart();
+    priceTotal();
     }
+  
+  
   }
 }
 
@@ -146,23 +139,15 @@ function addQuantity(event)
 {
   if(event.target.id === 'addQuant')
   {
-    let addProduct = cart.items[parseInt(event.target.className)].productName;
-    let addQuant = cart.items[parseInt(event.target.className)].quantity;
-    let round1 = true;
-  
-    for(let addQty = 0; addQty < cart.items.length; addQty++)
-    {
-      if(addProduct === cart.items[addQty].productName && addQuant == cart.items[addQty].quantity && round1 === true)
-      {
-        cart.items[addQty].quantity = parseInt(cart.items[addQty].quantity) + 1;
-        cart.storeCart();
-        round1 =false;
-        totalPrice = 0;
-        renderCart();
-        priceTotal();
-        break;
-      }
-    }
+    let index = parseInt(event.target.className);
+    let addProduct = cart.items[index].productName;
+    let addQuant = parseInt(cart.items[index].quantity);
+    cart.items[index].quantity = addQuant + 1;
+    cart.storeCart();
+    totalPrice = 0;
+    renderCart();
+    priceTotal();
+
   }
 }
 
