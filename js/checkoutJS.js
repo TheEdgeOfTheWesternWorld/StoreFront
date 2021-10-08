@@ -11,7 +11,7 @@ table.addEventListener('click', removeItemFromCart);
 
 let totalPrice = 0;
 
-retrieveProducts()
+retrieveProducts();
 
 function loadCart() 
 {
@@ -211,8 +211,15 @@ let reviewInput = document.getElementById('reviewArea')
 function reviewInputHandler(event){
   event.preventDefault();
   console.log(event.target)
-  let review = event.target.value;
-  console.log(review);
+  let review = event.target.leaveReview.value;
+  console.log(review.value);
+  let parentEl = document.getElementById('reviews');
+  let reviewEl = document.createElement('div');
+  let reviewTextEl = document.createElement('p');
+  reviewTextEl.textContent = review;
+  reviewEl.appendChild(reviewTextEl);
+  parentEl.appendChild(reviewEl);
+  event.target.reset();
 }
 
 

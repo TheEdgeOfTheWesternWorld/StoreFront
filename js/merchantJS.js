@@ -170,9 +170,11 @@ const priceAdjustSubmit = function(event) {
 //======================================================
 
 const saveItems = function() { 
-    console.log("Saving");
+    console.log('fake saving')
+    console.log(allProducts);
     let toSave = JSON.stringify(allProducts);
     localStorage.setItem("productList",toSave);
+
 }
 
 let renderTable = function() {

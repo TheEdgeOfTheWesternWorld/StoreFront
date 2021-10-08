@@ -4,11 +4,23 @@ retrieveProducts();
 
 createCart();
 
-// let testCar = new Products('Glory Days Letter Jacket','assets/jacket.jpg',250,'Relive that one time a long long time ago when High School was the pinnacle of your life. You can literally smell the nastalgia, no really, patent pending.',4000);
-new Products('Lifesize Darth Vader', 'assets/vader.jpg',66,'He IS your Father, and now he can stand somewhere, in your home or your office. Together you can rule. Priced in honor of the order that changed the galaxy forever - order 66.',20);
-new Products('Sick Longboard', 'assets/longboard.jpg',125,'Want to look SICK on the streets? Then get this sick longboard, bro! You\'ll rip it up, like a the dope, cowabunga, shaka throwing, mamajamma you know you are. Just buy the board, it\'s everything you need dude.',2000);
-new Products('Rad Coder\'s Computer', 'assets/computer.jpg',2500,'Rip a gnarly code; see what your ex is up to on their webcam; be an international superspy hacker person! It\'s the rig you never knew you always needed, built for speed, customized to impress, and yes you\'ll be able to code your whole face off.',200);
-new Products('The Corvette Compensator', 'assets/car.jpg',125000,'Jump into this ridiculously cool, unnecessarily loud, impractically fast, gas guzzling Corevette Comensator. Compensation where it counts!',2);
+function hardcodeItems(){
+    if(localStorage.getItem('productList')){
+        console.log('cool');
+    }
+    else{
+
+        let testCar = new Products('Glory Days Letter Jacket','assets/jacket.jpg',250,'Relive that one time a long long time ago when High School was the pinnacle of your life. You can literally smell the nastalgia, no really, patent pending.',4000);
+        new Products('Lifesize Darth Vader', 'assets/vader.jpg',66,'He IS your Father, and now he can stand somewhere, in your home or your office. Together you can rule. Priced in honor of the order that changed the galaxy forever - order 66.',20);
+        new Products('Sick Longboard', 'assets/longboard.jpg',125,'Want to look SICK on the streets? Then get this sick longboard, bro! You\'ll rip it up, like a the dope, cowabunga, shaka throwing, mamajamma you know you are. Just buy the board, it\'s everything you need dude.',2000);
+        new Products('Rad Coder\'s Computer', 'assets/computer.jpg',2500,'Rip a gnarly code; see what your ex is up to on their webcam; be an international superspy hacker person! It\'s the rig you never knew you always needed, built for speed, customized to impress, and yes you\'ll be able to code your whole face off.',200);
+        new Products('The Corvette Compensator', 'assets/car.jpg',125000,'Jump into this ridiculously cool, unnecessarily loud, impractically fast, gas guzzling Corevette Comensator. Compensation where it counts!',2);
+        let prod = JSON.stringify(allProducts)
+        localStorage.setItem('productList',prod);
+    }
+}
+
+hardcodeItems();
 
 renderItem();
 

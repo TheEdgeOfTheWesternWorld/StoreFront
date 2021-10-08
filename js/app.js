@@ -7,9 +7,12 @@ allProducts =[];
 //creates product list
 function retrieveProducts(){
     let parsedProducts = JSON.parse(localStorage.getItem('productList'));
+    console.log(parsedProducts);
     if (parsedProducts)
     {
+        console.log(parsedProducts.length);
         for( let i = 0; i<parsedProducts.length; i++){
+            console.log(i);
             let newProduct = parsedProducts[i]
             new Products(newProduct.productName,newProduct.productImage,newProduct.productPrice,newProduct.productDeets,newProduct.productQuantity);
         }
@@ -27,21 +30,19 @@ function Products(productName,productImage,productPrice,productDeets,productQuan
     this.productQuantity = productQuantity;
     allProducts.push(this);
 
-}
 
-let testCar = new Products('Glory Days Letter Jacket','assets/jacket.jpg',250,'Relive that one time a long long time ago when High School was the pinnacle of your life. You can literally smell the nastalgia, no really, patent pending.',4000);
+}
 
 // creates order Items
 function CartItem (product,quantity){
     console.log(product);
-    console.log(allProducts[0].productName);
     for (let i = 0; i<allProducts.length; i ++){
         if(product === allProducts[i].productName){
             this.productName =allProducts[i].productName;
             break;
         }
         else{
-            console.log('hey you got problems creating CartItems');
+            console.log('hey you are creating CartItems but it wasnt this one');
         }
     }
     this.quantity = quantity;

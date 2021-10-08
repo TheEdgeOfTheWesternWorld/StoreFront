@@ -343,48 +343,7 @@ h3, h4
     height: 830px;
 }
 
-#review1
-{
-    height: 150px;
-    margin: 20px;
-    padding: 15px;
-    border: 1px solid black;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-#review2
-{
-    height: 150px;
-    margin: 20px;
-    padding: 15px;
-    border: 1px solid black;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-#review3
-{
-    height: 150px;
-    margin: 20px;
-    padding: 15px;
-    border: 1px solid black;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-#review4
-{
-    height: 150px;
-    margin: 20px;
-    padding: 15px;
-    border: 1px solid black;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-#review5
-{
+div#reviews div{
     height: 150px;
     margin: 20px;
     padding: 15px;
