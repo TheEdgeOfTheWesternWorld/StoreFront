@@ -8,7 +8,7 @@ let onSearch = function(event) {
     let form = event.target;
     let searchField = document.getElementById("field-dropdown").value;
     let searchValue = form.searchValue.value;
-    console.log(searchField + ": " + searchValue);
+    //console.log(searchField + ": " + searchValue);
     for(let i = 0; i < allProducts.length; i++) {
         if(allProducts[i][searchField] == searchValue){
             searchArray.push(allProducts[i]);
@@ -94,13 +94,13 @@ let tbody = document.querySelector('tbody');
 
 const removeButtonOnClick = function(event) {
     event.preventDefault();
-    console.log(event.target.parentElement.parentElement.id);
+    //console.log(event.target.parentElement.parentElement.id);
     removeProductByName(event.target.parentElement.parentElement.id);
     renderTable();
 }
 
 //needs to account for what merchant is calling
-const addToTable = function(productsObject) {
+const renderTableRow = function(productsObject) {
     //create row
     let tr = document.createElement("tr");
     tr.setAttribute("id", productsObject.productName);
@@ -176,10 +176,10 @@ const saveItems = function() {
 }
 
 let renderTable = function() {
-    console.log("renderTable");
+    //console.log("renderTable");
     document.querySelector('tbody').innerHTML = "";
     for(let i = 0; i < allProducts.length; i++) {
-        addToTable(allProducts[i]);
+        renderTableRow(allProducts[i]);
     }
     saveItems();
 }
@@ -188,7 +188,7 @@ let renderSearchResults = function() {
     console.log("searchTable");
     document.querySelector('tbody').innerHTML = "";
     for(let i = 0; i < searchArray.length; i++) {
-        addToTable(searchArray[i]);
+        renderTableRow(searchArray[i]);
     }
     //saveItems();
 }
