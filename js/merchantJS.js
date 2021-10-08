@@ -83,6 +83,7 @@ let productSubmit = function(event) {
     newProduct = new Products(name,url,price,details,invQTY);
     console.log(newProduct);
     renderTable();
+    event.target.reset();
     return newProduct;
 }
 
@@ -97,6 +98,7 @@ const removeButtonOnClick = function(event) {
     //console.log(event.target.parentElement.parentElement.id);
     removeProductByName(event.target.parentElement.parentElement.id);
     renderTable();
+
 }
 
 //needs to account for what merchant is calling
@@ -170,9 +172,11 @@ const priceAdjustSubmit = function(event) {
 //======================================================
 
 const saveItems = function() { 
-    console.log("Saving");
+    console.log('fake saving')
+    console.log(allProducts);
     let toSave = JSON.stringify(allProducts);
     localStorage.setItem("productList",toSave);
+
 }
 
 let renderTable = function() {
