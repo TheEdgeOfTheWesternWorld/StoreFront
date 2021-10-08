@@ -11,7 +11,7 @@ table.addEventListener('click', removeItemFromCart);
 
 let totalPrice = 0;
 
-retrieveProducts();
+retrieveProducts()
 
 function loadCart() 
 {
