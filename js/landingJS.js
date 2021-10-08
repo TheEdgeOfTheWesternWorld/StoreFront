@@ -81,6 +81,7 @@ function addStuff (event){
     console.log(cart.items);
     createCartCounter(cart.items.length);
     cart.storeCart();
+    event.target.reset();
 }
 
 }
