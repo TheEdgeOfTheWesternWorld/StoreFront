@@ -22,6 +22,8 @@ function hardcodeItems(){
 
 hardcodeItems();
 
+featuredItem();
+
 renderItem();
 
 // prints all items in to itemCards
@@ -140,3 +142,82 @@ function createCart(){
         cart = new Cart([]);
     }
 }
+
+//See a different picture and a different name each time the page renders
+//randomly choose one item from the stored list
+function featuredItem (){
+    let randomNumber = Math.random();
+    console.log(randomNumber);
+    let multiplyRandomNumber = randomNumber * allProducts.length;
+    randomNumber = Math.floor(multiplyRandomNumber);
+    console.log(randomNumber);
+    console.log(allProducts[0]);
+    console.log(allProducts[1]);
+
+    let pickedProduct = allProducts[randomNumber];
+    console.log(pickedProduct.productName);
+    randomNumber = allProducts;
+
+    console.log(randomNumber);
+    console.log(multiplyRandomNumber);
+
+    let featureEl=document.getElementById('featured-section-container text-center-md text-center-sm text-center-xs');
+    featureEl.innerHTML ='';
+
+    let productName = pickedProduct.productName;
+        let productImage = pickedProduct.productImage;
+        let productPrice = pickedProduct.productPrice;
+        let productDeets = pickedProduct.productDeets;
+
+        let divEl = document.createElement('div');
+        divEl.setAttribute('class', 'itemCard');
+        let featureTitle = document.createElement('h1');
+        featureTitle.textContent = 'Featured Product';
+        let itemNameEl = document.createElement('h3');
+        itemNameEl.setAttribute('id', productName);
+        itemNameEl.textContent = productName;
+        let imageEl = document.createElement('img');
+        imageEl.src = productImage;
+        let descriptionEl = document.createElement('p');
+        descriptionEl.textContent = productDeets;
+        let priceEl = document.createElement('h5');
+        priceEl.textContent = '$ ' + productPrice;
+        let formEl = document.createElement('form');
+        formEl.setAttribute('id', productName);
+        let buttonEl = document.createElement('button');
+        buttonEl.id = productName;
+        buttonEl.textContent = 'Add to my Stuff!';
+        let inputValue = document.createElement ('input');
+        let labelValue = document.createElement('label');
+        labelValue.innerText = '<--How Many Stuffs';
+
+        inputValue.setAttribute('name', 'quantity');
+
+        divEl.appendChild(featureTitle);
+        divEl.appendChild(itemNameEl);
+        divEl.appendChild(imageEl);
+        divEl.appendChild(descriptionEl);
+        divEl.appendChild(priceEl);
+        divEl.appendChild(formEl);
+        formEl.appendChild(buttonEl);
+        formEl.appendChild(inputValue);
+        formEl.appendChild(labelValue);
+        featureEl.appendChild(divEl);
+
+
+    console.log(featureEl);
+
+}
+//get the new item to render
+
+
+
+//pull picture from somewhere
+//correctly identify the picture pulled
+//clear picture and re-insert new picture and details
+
+
+//make sure pictures are correctly associated with the item
+
+
+
